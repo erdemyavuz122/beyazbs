@@ -2,18 +2,48 @@
 <html lang="tr">
   <head>
     <meta charset="UTF-8" />
-    <title>Teknik Servis | Beyaz Eşya Servisi</title>
+    <title>Teknik Servis | Beyaz Eşya Servisi ve Destek</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Bootstrap 5 CDN -->
+
+    <!-- Favicon & Apple Touch Icon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Teknik Servis | Beyaz Eşya Servisi" />
+    <meta
+      property="og:description"
+      content="Garantisi bitmiş beyaz eşyalarınız için hızlı, ekonomik ve güvenilir servis. Hemen arayın!"
+    />
+    <meta
+      property="og:image"
+      content="https://www.ornekdomain.com/social-image.png"
+    />
+    <meta property="og:url" content="https://www.ornekdomain.com/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Teknik Servis | Beyaz Eşya Servisi" />
+    <meta
+      name="twitter:description"
+      content="Garantisi bitmiş beyaz eşyalarınız için hızlı, ekonomik ve güvenilir servis. Hemen arayın!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.ornekdomain.com/social-image.png"
+    />
+
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Bootstrap Icons (isteğe bağlı) -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+
     <style>
       body {
         background: #f7faff;
@@ -21,7 +51,22 @@
       .navbar {
         background: #2563eb;
       }
-      .navbar-brand,
+      .navbar-brand {
+        background: #dbeafe;
+        color: #2563eb !important;
+        border-radius: 16px;
+        padding: 9px 28px 9px 18px;
+        font-size: 1.35em;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0.65em;
+        box-shadow: 0 2px 8px #2563eb22;
+      }
+      .navbar-brand:hover {
+        background: #fff;
+        color: #1e293b !important;
+      }
       .navbar-nav .nav-link {
         color: #fff !important;
         font-weight: 600;
@@ -32,79 +77,102 @@
       .call-btn {
         background: #2563eb;
         color: #fff;
-        font-weight: 600;
+        font-weight: 700;
         border-radius: 16px;
+        font-size: 1.45em;
+        padding: 16px 0;
+        text-align: center;
+        margin: 1.5em 0 1.2em 0;
+        box-shadow: 0 2px 12px #2563eb22;
+        transition: background 0.16s;
       }
       .call-btn:hover {
-        background: #1e40af;
+        background: #1744a0;
         color: #fff;
+        text-decoration: none;
+        box-shadow: 0 4px 18px #2563eb33;
+        transform: scale(1.03);
       }
-      .hizmet-card {
-        background: #fff;
-        border-radius: 14px;
-        box-shadow: 0 2px 8px #cbd5e1;
-        transition: box-shadow 0.18s, border-color 0.18s;
-        border: 2px solid #dbeafe;
-        cursor: pointer;
-        min-height: 80px;
-      }
-      .hizmet-card:hover {
-        border-color: #2563eb;
-        box-shadow: 0 4px 16px #2563eb22;
-      }
-      .hizmet-card .bi {
+      .call-mini {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 1.1em;
         color: #2563eb;
-        font-size: 1.8em;
+        background: #dbeafe;
+        border-radius: 10px;
+        padding: 7px 16px;
+        font-weight: 600;
+        box-shadow: 0 1px 6px #2563eb14;
+        text-decoration: none;
+        transition: background 0.15s;
       }
-      .yorumlar {
-        margin-top: 2.5rem;
+      .call-mini:hover {
+        background: #fff;
+        color: #1e293b;
+        text-decoration: none;
       }
       .yorum {
         background: #e0e7ef;
-        margin: 0.5rem 0;
-        padding: 0.8rem 1rem;
-        border-radius: 10px;
+        margin-bottom: 0.7em;
+        padding: 0.7em 1em;
+        border-radius: 9px;
+      }
+      .carousel-inner {
+        min-height: 255px;
+      }
+      .carousel .yorum {
+        font-size: 1.06em;
+      }
+      .makale-box {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 2px 14px #2563eb13;
+        padding: 2.5rem 2rem 2.5rem 2rem;
+        margin: 40px 0 50px 0;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .makale-box h2,
+      .makale-box h3 {
+        color: #2563eb;
+        font-weight: 700;
+        margin-top: 1.2em;
+        margin-bottom: 0.6em;
+      }
+      .makale-box h1 {
+        color: #1744a0;
+        font-size: 1.55em;
+        margin-bottom: 1em;
+        font-weight: 800;
+      }
+      .section-title {
+        color: #2563eb;
+        font-weight: 700;
+      }
+      .mini-uyari {
+        color: #f59e42;
+        font-size: 0.98em;
+        margin-top: 20px;
       }
       footer {
         background: #1e293b;
         color: #fff;
-        padding: 22px 0 12px 0;
+        padding: 24px 0 16px 0;
       }
       footer a {
         color: #dbeafe;
         text-decoration: none;
-        margin: 0 8px;
+        margin: 0 9px;
       }
-      .mini-uyari {
-        color: #f59e42;
-        font-size: 0.97em;
-        margin-top: 18px;
-      }
-      .navbar-brand {
-        background: #dbeafe;
-        color: #2563eb !important;
-        border-radius: 14px;
-        padding: 5px;  /* üst-sağ-alt-sol */
-        font-size: 1.45em;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 0.5em;   /* simge ile yazı arası mesafe */
-        box-shadow: 0 2px 8px #2563eb22;
-      }
-      .navbar-brand.active,
-      .navbar-brand:hover,
-      .navbar-brand:active {
-        background: #dbeafe;
-        color: #2563eb !important;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px #2563eb22;
-      }
-      .yorum {
-        background: #e0e7ef;
-        margin-bottom: 0.8em;
-        padding: 0.8em 1em;
-        border-radius: 10px;
+      @media (max-width: 700px) {
+        .navbar-brand {
+          font-size: 1em;
+          padding: 10px 10px 10px 12px;
+        }
+        .makale-box {
+          padding: 1.4rem 0.7rem;
+        }
       }
     </style>
   </head>
@@ -112,8 +180,9 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg shadow-sm">
       <div class="container">
-        <a class="navbar-brand active" href="index.html"
-          ><i class="bi bi-house-gear"></i> Teknik Servis
+        <a class="navbar-brand" href="index.html">
+          <i class="bi bi-house-gear" style="font-size: 1.2em"></i>
+          Teknik Servis
         </a>
         <button
           class="navbar-toggler"
@@ -151,99 +220,24 @@
       </div>
     </nav>
 
-    <!-- Ana İçerik -->
+    <!-- İçerik -->
     <main class="container py-5">
-      <h1 class="display-5 fw-bold text-primary mb-3">
+      <h1 class="display-5 fw-bold section-title mb-3">
         Beyaz Eşya Servisi & Teknik Destek
       </h1>
-      <p class="lead mb-4">
-        Garantisi bitmiş beyaz eşyalarınız ve elektronik cihazlarınız için
-        hızlı, ekonomik ve güvenilir teknik servis. İstanbul'da 7/24 destek!
+      <p class="lead mb-3">
+        Garantisi bitmiş beyaz eşyalarınız için hızlı, ekonomik ve güvenilir
+        servis. <b>Hemen şimdi arayın, teknik destek alın!</b>
       </p>
-      <a class="btn call-btn btn-lg mb-4" href="tel:05555555555">
-        <i class="bi bi-telephone-fill"></i> 0555 555 5555 Hemen Ara!
+      <a class="btn call-btn w-100" href="tel:05555555555">
+        <i class="bi bi-telephone-fill"></i> 0555 555 5555 &nbsp; | &nbsp; Hemen
+        Ara & Destek Al
       </a>
 
-      <div class="row g-3 mt-2">
-        <div class="col-12 col-md-3">
-          <a
-            href="hizmet.html?service=Beyaz+Eşya+Servisi"
-            class="text-decoration-none"
-          >
-            <div class="hizmet-card p-3 d-flex align-items-center gap-3 h-100">
-              <i class="bi bi-tools"></i>
-              <span class="fw-bold text-dark">Beyaz Eşya Servisi</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-md-3">
-          <a href="hizmet.html?service=Buzdolabı" class="text-decoration-none">
-            <div class="hizmet-card p-3 d-flex align-items-center gap-3 h-100">
-              <i class="bi bi-snow"></i>
-              <span class="fw-bold text-dark">Buzdolabı</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-md-3">
-          <a
-            href="hizmet.html?service=Çamaşır+Makinesi"
-            class="text-decoration-none"
-          >
-            <div class="hizmet-card p-3 d-flex align-items-center gap-3 h-100">
-              <i class="bi bi-droplet-half"></i>
-              <span class="fw-bold text-dark">Çamaşır Makinesi</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-md-3">
-          <a
-            href="hizmet.html?service=Bulaşık+Makinesi"
-            class="text-decoration-none"
-          >
-            <div class="hizmet-card p-3 d-flex align-items-center gap-3 h-100">
-              <i class="bi bi-cup-hot"></i>
-              <span class="fw-bold text-dark">Bulaşık Makinesi</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-md-3">
-          <a href="hizmet.html?service=Fırın" class="text-decoration-none">
-            <div class="hizmet-card p-3 d-flex align-items-center gap-3 h-100">
-              <i class="bi bi-egg-fried"></i>
-              <span class="fw-bold text-dark">Fırın</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-md-3">
-          <a href="hizmet.html?service=Klima" class="text-decoration-none">
-            <div class="hizmet-card p-3 d-flex align-items-center gap-3 h-100">
-              <i class="bi bi-wind"></i>
-              <span class="fw-bold text-dark">Klima</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-md-3">
-          <a href="hizmet.html?service=Kombi" class="text-decoration-none">
-            <div class="hizmet-card p-3 d-flex align-items-center gap-3 h-100">
-              <i class="bi bi-fire"></i>
-              <span class="fw-bold text-dark">Kombi</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-md-3">
-          <a href="hizmet.html?service=Televizyon" class="text-decoration-none">
-            <div class="hizmet-card p-3 d-flex align-items-center gap-3 h-100">
-              <i class="bi bi-tv"></i>
-              <span class="fw-bold text-dark">Televizyon</span>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- Yorumlar Slider 1 -->
+      <h2 class="h4 section-title mt-5 mb-3">Müşteri Yorumları</h2>
       <div
-        id="yorumSlider1"
-        class="carousel slide mb-4 mt-4"
+        id="yorumlarSlider"
+        class="carousel slide mb-4"
         data-bs-ride="carousel"
       >
         <div class="carousel-inner">
@@ -265,6 +259,8 @@
               <b>Furkan T.:</b> Garantisi bitmiş buzdolabımı hemen tamir
               ettiler.
             </div>
+          </div>
+          <div class="carousel-item">
             <div class="yorum">
               <b>Cansu K.:</b> Çamaşır makinesi için gelen usta çok bilgiliydi,
               tavsiye ederim.
@@ -285,18 +281,56 @@
               sorunum çözüldü.
             </div>
           </div>
+          <div class="carousel-item">
+            <div class="yorum">
+              <b>Oktay S.:</b> Tüm işlemler şeffaf yapıldı, güven verdi.
+            </div>
+            <div class="yorum">
+              <b>Merve T.:</b> Hem uygun fiyat hem de temiz işçilik aldım.
+            </div>
+            <div class="yorum">
+              <b>Barış K.:</b> Klima arızasında anında yardımcı oldular.
+            </div>
+            <div class="yorum">
+              <b>Fatma A.:</b> Randevu saatine tam zamanında geldiler.
+            </div>
+            <div class="yorum">
+              <b>Hasan İ.:</b> Tecrübeli ve güleryüzlü personel, herkese tavsiye
+              ederim.
+            </div>
+          </div>
         </div>
-
-      <div class="mini-uyari">
-        Not: Bu site ve servis, sadece garantisi sona ermiş cihazlar için hizmet
-        verir. Yetkili servis <b>değiliz</b>.
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#yorumlarSlider"
+          data-bs-slide="prev"
+        >
+          <span
+            class="carousel-control-prev-icon bg-primary rounded"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Önceki</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#yorumlarSlider"
+          data-bs-slide="next"
+        >
+          <span
+            class="carousel-control-next-icon bg-primary rounded"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Sonraki</span>
+        </button>
       </div>
-      <div>
+      <!-- Makale Kutusu -->
+      <div class="makale-box mt-5">
         <h1>
           Beyaz Eşyalar: Modern Hayatın Vazgeçilmezi, Bakım ve Tamirde
           Profesyonel Yaklaşım
         </h1>
-
         <h2>Giriş</h2>
         <p>
           Günümüzde teknolojinin sunduğu imkanlar, günlük yaşamı büyük oranda
@@ -308,7 +342,6 @@
           uzun vadede verim almak ve olası arızalarda maddi kayıpları en aza
           indirmek için düzenli bakım ve profesyonel tamir uygulamaları şarttır.
         </p>
-
         <h2>Beyaz Eşyaların Önemi ve Kullanım Alanları</h2>
         <p>
           Beyaz eşyalar, yalnızca konutlarda değil, aynı zamanda otellerde,
@@ -325,7 +358,6 @@
           sunmalarıdır. Ancak, bu verimliliğin sürdürülebilirliği, düzenli bakım
           ve bilinçli kullanım ile mümkündür.
         </p>
-
         <h2>Beyaz Eşyaların Temel Bakım Prensipleri</h2>
         <p>
           Beyaz eşyaların ömrünü uzatmak ve performansını korumak için düzenli
@@ -334,7 +366,6 @@
           çok kullanılan beyaz eşyalar için temel bakım önerileri yer
           almaktadır:
         </p>
-
         <h3>1. Buzdolabı ve Derin Dondurucu</h3>
         <ul>
           <li>
@@ -357,7 +388,6 @@
             gerektiğinde değiştirilmesi gerekir.
           </li>
         </ul>
-
         <h3>2. Çamaşır Makinesi</h3>
         <ul>
           <li>
@@ -379,7 +409,6 @@
             riskini artırır.
           </li>
         </ul>
-
         <h3>3. Bulaşık Makinesi</h3>
         <ul>
           <li>
@@ -396,7 +425,6 @@
             eksik olmamalı, belirli aralıklarla takviye edilmelidir.
           </li>
         </ul>
-
         <h3>4. Fırın ve Ocak</h3>
         <ul>
           <li>
@@ -413,7 +441,6 @@
             ve ısıtıcı rezistanslar aşırı yağlanırsa cihazın verimi düşer.
           </li>
         </ul>
-
         <h2>Sık Karşılaşılan Arızalar ve Müdahale Yöntemleri</h2>
         <p>
           Beyaz eşyalarda görülen arızalar çoğunlukla yanlış kullanım, bakım
@@ -448,7 +475,6 @@
           müdahalede bulunmaması gerekmektedir. Özellikle elektrikli ve gazlı
           cihazlarda, yetkisiz müdahaleler ciddi tehlikelere yol açabilir.
         </p>
-
         <h2>Profesyonel Tamirin Önemi</h2>
         <p>
           Birçok kullanıcı, maliyetten tasarruf etmek amacıyla arızaları kendi
@@ -480,7 +506,6 @@
           önleyebilirler. Bu durum, hem cihaz ömrünün uzamasını hem de enerji
           verimliliğinin korunmasını sağlar.
         </p>
-
         <h2>Sık Yapılan Hatalar ve Dikkat Edilmesi Gerekenler</h2>
         <p>
           Beyaz eşyaların bakımında yapılan bazı yaygın hatalar, cihazın ömrünü
@@ -511,7 +536,6 @@
             vadede ciddi arızalara neden olabilir.
           </li>
         </ul>
-
         <h2>Enerji Verimliliği ve Çevresel Etki</h2>
         <p>
           Modern beyaz eşyaların bir diğer önemli özelliği de enerji verimliliği
@@ -522,7 +546,6 @@
           verimsiz cihazların profesyonel şekilde geri dönüşüme kazandırılması
           da çevresel sürdürülebilirlik açısından önemlidir.
         </p>
-
         <h2>Sonuç</h2>
         <p>
           Beyaz eşyalar, yaşamımızın vazgeçilmez bir parçası olup, sağladıkları
@@ -535,9 +558,19 @@
           önler hem de güvenli, sürdürülebilir bir kullanım sunar.
         </p>
       </div>
+      <!-- /Makale Kutusu -->
+
+      <!-- Müşteri Yorumları Slider (15 Yorum, 5'li gruplar) -->
+
+      <!-- Telefon numarasına tekrar yönlendiren alan -->
+      <div class="text-center mb-4">
+        <a class="call-mini" href="tel:05555555555">
+          <i class="bi bi-telephone"></i> 0555 555 5555 | Şimdi Ara & Bilgi Al
+        </a>
+      </div>
     </main>
 
-    <footer class="mt-5">
+    <footer class="mt-4">
       <div class="container text-center">
         <div>
           <a href="index.html">Ana Sayfa</a> |
@@ -548,14 +581,9 @@
           <a href="kvkk.html">KVKK</a>
         </div>
 
-        <div class="mt-2" style="font-size: 0.95em">
-          Sitemizde sunulan hizmetler <b>garantisi bitmiş ürünler</b> içindir.
-          <b>Yetkili servis değiliz</b>.
-        </div>
-        <div class="mt-2" style="font-size: 0.93em">Teknik Servis © 2024</div>
+        <div class="mt-2" style="font-size: 0.95em">Teknik Servis © 2024</div>
       </div>
     </footer>
-    <!-- Bootstrap JS (isteğe bağlı, menü için gerekirse açılabilir) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
