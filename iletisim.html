@@ -4,232 +4,269 @@
     <meta charset="UTF-8" />
     <title>İletişim | Teknik Servis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <style>
       body {
+        margin: 0;
         background: #f7faff;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+      header {
+        background: #2563eb;
+        padding: 1em 0 0.9em 0;
       }
       .navbar {
-        background: #2563eb;
+        max-width: 970px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        padding: 0 10px;
       }
-      .navbar-brand,
-      .navbar-nav .nav-link {
-        color: #fff !important;
-        font-weight: 600;
+      .navbar-title {
+        font-weight: bold;
+        font-size: 1.1em;
+        color: #dbeafe;
       }
-      .navbar-nav .nav-link.active {
-        color: #dbeafe !important;
+      .navbar-links a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 1em;
+        font-size: 1em;
       }
-      .icerik-box {
-        background: #fff;
-        border-radius: 14px;
-        box-shadow: 0 2px 8px #cbd5e1;
-        padding: 2.5rem 2rem;
-        margin-top: 2rem;
+      .navbar-links a.active,
+      .navbar-links a:hover {
+        color: #ffe44b;
       }
-      .contact-info i {
+      main {
+        max-width: 440px;
+        margin: 0 auto;
+        padding: 28px 12px 0 12px;
+      }
+      .title {
         color: #2563eb;
-        font-size: 1.6em;
-        margin-right: 7px;
+        font-size: 1.32em;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1em;
       }
-      .contact-info span {
-        font-size: 1.11em;
+      .contact-box {
+        background: #fff;
+        border-radius: 11px;
+        box-shadow: 0 2px 14px #2563eb10;
+        padding: 2em 1em 1.2em 1em;
+      }
+      .contact-row {
+        margin-bottom: 1.15em;
+      }
+      .contact-label {
+        color: #1744a0;
         font-weight: 500;
       }
-      .form-label {
-        font-weight: 600;
-        color: #2563eb;
-      }
-      .form-control:focus {
-        border-color: #2563eb;
-        box-shadow: 0 0 0 0.1rem #2563eb33;
-      }
-      .btn-primary {
+      .call-btn {
         background: #2563eb;
-        border: none;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 13px;
+        display: block;
+        text-align: center;
+        font-size: 1.12em;
+        padding: 13px 0;
+        text-decoration: none;
+        margin-top: 1.4em;
       }
-      .btn-primary:hover {
-        background: #1e40af;
+      .call-btn:hover {
+        background: #133eb3;
       }
-      .mini-uyari {
-        color: #f59e42;
-        font-size: 0.97em;
+      /* Form Stilleri */
+      form {
         margin-top: 18px;
+      }
+      .form-row {
+        margin-bottom: 13px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+        color: #1744a0;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px 9px;
+        border-radius: 7px;
+        border: 1px solid #bccbe7;
+        background: #f4f8ff;
+        font-size: 1em;
+        font-family: inherit;
+        box-sizing: border-box;
+        margin-bottom: 2px;
+      }
+      input:focus,
+      textarea:focus {
+        outline: 2px solid #2563eb33;
+        border-color: #2563eb;
+      }
+      textarea {
+        min-height: 80px;
+        resize: vertical;
+      }
+      .form-btn {
+        background: #2563eb;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 11px;
+        font-size: 1.09em;
+        padding: 12px 0;
+        width: 100%;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 2px 9px #2563eb15;
+        transition: background 0.13s;
+      }
+      .form-btn:hover {
+        background: #1744a0;
+      }
+      .form-success {
+        margin-top: 12px;
+        color: #30b662;
+        background: #e8ffe8;
+        padding: 10px 8px;
+        border-radius: 9px;
+        font-size: 0.98em;
+        text-align: center;
+        font-weight: 500;
+      }
+      .form-error {
+        margin-top: 10px;
+        color: #e54343;
+        background: #fff0f0;
+        padding: 8px 8px;
+        border-radius: 7px;
+        font-size: 0.98em;
+        text-align: center;
       }
       footer {
         background: #1e293b;
         color: #fff;
-        padding: 22px 0 12px 0;
+        padding: 22px 0 14px 0;
+        text-align: center;
+        font-size: 1em;
+        margin-top: 32px;
       }
       footer a {
         color: #dbeafe;
         text-decoration: none;
-        margin: 0 8px;
+        margin: 0 9px;
+        font-size: 0.97em;
       }
-      .yorum {
-        background: #e0e7ef;
-        margin-bottom: 0.8em;
-        padding: 0.8em 1em;
-        border-radius: 10px;
+      .footer-mini {
+        font-size: 0.93em;
+        color: #ffe44b;
+        margin-top: 7px;
+      }
+      @media (max-width: 600px) {
+        main {
+          padding: 18px 3px 0 3px;
+        }
+        .contact-box {
+          padding: 1em 5px;
+        }
       }
     </style>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg shadow-sm">
-      <div class="container">
-        <a class="navbar-brand" href="index.html"
-          ><i class="bi bi-house-gear"></i> Teknik Servis</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-          aria-controls="mainNav"
-          aria-expanded="false"
-          aria-label="Menüyü Aç"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Ana Sayfa</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="iletisim.html">İletişim</a>
-            </li>
-          </ul>
-        </div>
+    <header>
+      <div class="navbar">
+        <span class="navbar-title">Teknik Servis</span>
+        <nav class="navbar-links">
+          <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
+          <a href="hakkimizda.html">Hakkımızda</a>
+          <a href="iletisim.html" class="active">İletişim</a>
+        </nav>
       </div>
-    </nav>
-
-    <main class="container py-5">
-      <div class="icerik-box">
-        <h1 class="text-primary mb-3 fw-bold">
-          <i class="bi bi-envelope-at"></i> İletişim
-        </h1>
-        <div class="row">
-          <!-- Sol: İletişim Bilgileri -->
-          <div class="col-md-5 contact-info mb-4">
-            <p>
-              <i class="bi bi-telephone-fill"></i> <span>0555 555 5555</span>
-            </p>
-            <p><i class="bi bi-whatsapp"></i> <span>0555 555 5555</span></p>
-            <p>
-              <i class="bi bi-envelope-fill"></i>
-              <span>info@teknikservis.com</span>
-            </p>
-            <p>
-              <i class="bi bi-geo-alt-fill"></i> <span>İstanbul, Kadıköy</span>
-            </p>
-            <a href="tel:05555555555" class="btn btn-primary mt-2 w-100"
-              ><i class="bi bi-telephone"></i> Hemen Ara</a
-            >
-          </div>
-          <!-- Sağ: İletişim Formu -->
-          <div class="col-md-7">
-            <form>
-              <div class="mb-3">
-                <label for="adsoyad" class="form-label">Ad Soyad</label>
-                <input type="text" class="form-control" id="adsoyad" required />
-              </div>
-              <div class="mb-3">
-                <label for="tel" class="form-label">Telefon</label>
-                <input type="tel" class="form-control" id="tel" required />
-              </div>
-              <div class="mb-3">
-                <label for="mesaj" class="form-label">Mesajınız</label>
-                <textarea
-                  class="form-control"
-                  id="mesaj"
-                  rows="4"
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Gönder</button>
-            </form>
-          </div>
+    </header>
+    <main>
+      <div class="title">İletişim Bilgileri</div>
+      <div class="contact-box">
+        <div class="contact-row">
+          <span class="contact-label">Telefon:</span> 0555 555 5555
         </div>
-        <div
-        id="yorumSlider1"
-        class="carousel slide mb-4 mt-4"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="yorum">
-              <b>Ayhan D.:</b> Servis tam zamanında geldi, çok memnun kaldım.
-            </div>
-            <div class="yorum">
-              <b>Gülşen S.:</b> Kombi bakımı için çok uygun fiyat aldım, işçilik
-              harikaydı.
-            </div>
-            <div class="yorum">
-              <b>Burak E.:</b> Hızlı ve güvenilirler, tekrar ararım.
-            </div>
-            <div class="yorum">
-              <b>Elif M.:</b> Klimamın arızası anında çözüldü, çok teşekkürler!
-            </div>
-            <div class="yorum">
-              <b>Furkan T.:</b> Garantisi bitmiş buzdolabımı hemen tamir
-              ettiler.
-            </div>
-            <div class="yorum">
-              <b>Cansu K.:</b> Çamaşır makinesi için gelen usta çok bilgiliydi,
-              tavsiye ederim.
-            </div>
-            <div class="yorum">
-              <b>Levent Y.:</b> Parça değişimi ve fiyat konusunda çok şeffaflar,
-              güvenim tam.
-            </div>
-            <div class="yorum">
-              <b>Zeynep Ç.:</b> Hem hızlı dönüş hem de güler yüzlü hizmet aldım.
-            </div>
-            <div class="yorum">
-              <b>Serkan B.:</b> Eski fırınımı çalışır hale getirdiler, teşekkür
-              ederim.
-            </div>
-            <div class="yorum">
-              <b>Hülya P.:</b> Sadece bir telefonla randevu aldım, aynı gün
-              sorunum çözüldü.
-            </div>
-          </div>
+        <div class="contact-row">
+          <span class="contact-label">E-posta:</span> teknikservis@ornekmail.com
         </div>
-        <p class="mini-uyari mt-4">
-          Not: Teknik Servis yalnızca garantisi sona ermiş ürünlere hizmet
-          verir, <b>yetkili servis değildir</b>.
-        </p>
+        <div class="contact-row">
+          <span class="contact-label">Adres:</span> Mahalle Cad. No: 5, İstanbul
+        </div>
+        <a href="tel:05555555555" class="call-btn">📞 Hemen Ara & Destek Al</a>
+        <!-- İletişim Formu -->
+        <form id="contactForm" autocomplete="off">
+          <div class="form-row">
+            <label for="name">Adınız Soyadınız</label>
+            <input type="text" id="name" name="name" required maxlength="60" />
+          </div>
+          <div class="form-row">
+            <label for="email">E-posta</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              maxlength="60"
+            />
+          </div>
+          <div class="form-row">
+            <label for="message">Mesajınız</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              maxlength="600"
+            ></textarea>
+          </div>
+          <button type="submit" class="form-btn">Gönder</button>
+          <div id="formMsg"></div>
+        </form>
       </div>
     </main>
-
-    <footer class="mt-5">
-      <div class="container text-center">
-        <div>
-          <a href="index.html">Ana Sayfa</a> |
-          <a href="hizmetlerimiz.html">Hizmetlerimiz</a> |
-          <a href="hakkimizda.html">Hakkımızda</a> |
-          <a href="iletisim.html">İletişim</a> |
-
-        </div>
-       
-        <div class="mt-2" style="font-size: 0.93em">Teknik Servis © 2024</div>
+    <footer>
+      <div>
+        <a href="index.html">Ana Sayfa</a> |
+        <a href="hizmetlerimiz.html">Hizmetlerimiz</a> |
+        <a href="hakkimizda.html">Hakkımızda</a> |
+        <a href="iletisim.html">İletişim</a> |
+        <a href="gizlilik.html">Gizlilik Politikası</a> |
+        <a href="kvkk.html">KVKK</a>
       </div>
+      <div class="footer-mini">
+        Bu hizmet yalnızca garantisi sona ermiş cihazlar içindir.
+        <b>Yetkili servis değiliz.</b>
+      </div>
+      <div style="margin-top: 5px; font-size: 0.96em">Teknik Servis © 2024</div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Basit ön kontrol
+          var name = document.getElementById("name").value.trim();
+          var email = document.getElementById("email").value.trim();
+          var msg = document.getElementById("message").value.trim();
+          var formMsg = document.getElementById("formMsg");
+          if (!name || !email || !msg) {
+            formMsg.innerHTML =
+              '<div class="form-error">Tüm alanları doldurun.</div>';
+            return;
+          }
+          // Mailto veya API ile gönderme için burayı değiştirebilirsin
+          formMsg.innerHTML =
+            '<div class="form-success">Mesajınız başarıyla gönderildi! En kısa sürede dönüş yapılacaktır.</div>';
+          document.getElementById("contactForm").reset();
+        });
+    </script>
   </body>
 </html>
