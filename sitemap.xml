@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.siteniz.com/</loc>
+    <priority>1.00</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://www.siteniz.com/hizmetlerimiz.html</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.siteniz.com/hakkimizda.html</loc>
+    <priority>0.80</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.siteniz.com/iletisim.html</loc>
+    <priority>0.80</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <!-- Hizmet detay sayfalarını ekle -->
+  <url>
+    <loc>https://www.siteniz.com/hizmet.html?service=Çamaşır+Makinesi</loc>
+    <priority>0.70</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.siteniz.com/hizmet.html?service=Buzdolabı</loc>
+    <priority>0.70</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.siteniz.com/hizmet.html?service=Klima</loc>
+    <priority>0.70</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <!-- Gerekirse diğer hizmetleri de ekle -->
+</urlset>

@@ -8,6 +8,63 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
     <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      id="dynamicDesc"
+      content="Klima Servisi arızalarında hızlı, ekonomik ve güvenilir teknik destek alın. Yetkili servis değiliz."
+    />
+
+    <!-- Canonical -->
+    <link
+      rel="canonical"
+      id="canonicalLink"
+      href="https://www.siteniz.com/hizmet?service=klima-servisi"
+    />
+
+    <!-- Favicon & Apple Icon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+    <!-- Open Graph (Facebook, WhatsApp) -->
+    <meta
+      property="og:title"
+      id="ogTitle"
+      content="Klima Servisi | Teknik Servis"
+    />
+    <meta
+      property="og:description"
+      id="ogDesc"
+      content="Klima Servisi arızalarında hızlı, ekonomik ve güvenilir teknik destek."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      id="ogUrl"
+      content="https://www.siteniz.com/hizmet?service=klima-servisi"
+    />
+    <meta
+      property="og:image"
+      content="https://www.siteniz.com/social-image.png"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      id="twitterTitle"
+      content="Klima Servisi | Teknik Servis"
+    />
+    <meta
+      name="twitter:description"
+      id="twitterDesc"
+      content="Klima Servisi arızalarında hızlı, ekonomik ve güvenilir teknik destek."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.siteniz.com/social-image.png"
+    />
     <style>
       body {
         margin: 0;
@@ -158,15 +215,17 @@
       }
     </style>
     <script>
-      // Parametreden başlığı al, başlık ve açıklamayı doldur
       document.addEventListener("DOMContentLoaded", function () {
         function getQueryParam(name) {
           let url = new URL(window.location.href);
           return url.searchParams.get(name) || "Hizmet";
         }
         var service = getQueryParam("service").replace(/\+/g, " ");
-        document.title = service + " Servisi | Teknik Servis";
-        document.getElementById("hizmetTitle").innerText = service + " Servisi";
+        if (!service.trim().toLowerCase().endsWith("servisi")) {
+          service = service + " Servisi";
+        }
+        document.title = service + " | Teknik Servis";
+        document.getElementById("hizmetTitle").innerText = service;
         document.getElementById("hizmetDesc").innerText =
           service + " arızalarında hızlı, ekonomik ve güvenilir teknik destek!";
       });
