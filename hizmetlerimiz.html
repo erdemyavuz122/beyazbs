@@ -4,230 +4,262 @@
     <meta charset="UTF-8" />
     <title>Hizmetlerimiz | Teknik Servis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <style>
       body {
+        margin: 0;
         background: #f7faff;
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: #222;
+      }
+      header {
+        background: #2563eb;
+        padding: 1.05em 0 1em 0;
       }
       .navbar {
-        background: #2563eb;
+        max-width: 970px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        padding: 0 10px;
       }
-      .navbar-brand,
-      .navbar-nav .nav-link {
-        color: #fff !important;
+      .navbar-title {
+        font-weight: bold;
+        font-size: 1.15em;
+        color: #dbeafe;
+      }
+      .navbar-links a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 1em;
+        font-size: 1em;
+        transition: color 0.12s;
+      }
+      .navbar-links a:hover,
+      .navbar-links a.active {
+        color: #ffe44b;
+        text-decoration: underline;
+      }
+      h1.section-title {
+        color: #2563eb;
+        font-size: 1.55em;
+        text-align: center;
+        font-weight: 700;
+        margin-top: 2em;
+        margin-bottom: 0.6em;
+      }
+      .desc {
+        text-align: center;
+        font-size: 1.06em;
+        margin-bottom: 1.8em;
+      }
+      .hizmetler {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        max-width: 640px;
+        margin: 0 auto 28px auto;
+      }
+      .hizmet-kutu {
+        background: #fff;
+        border-radius: 11px;
+        box-shadow: 0 2px 10px #2563eb0b;
+        padding: 14px 5px 10px 5px;
+        text-align: center;
+        font-weight: 600;
+        color: #1744a0;
+        font-size: 0.96em;
+        width: 145px;
+        min-height: 70px;
+        text-decoration: none;
+        border: 1.3px solid #e6eaff;
+        transition: box-shadow 0.13s, transform 0.13s, background 0.14s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: 0.01em;
+      }
+      .hizmet-kutu .emoji {
+        font-size: 1.35em;
+        margin-bottom: 4px;
+      }
+      .hizmet-kutu:hover {
+        box-shadow: 0 6px 24px #2563eb22;
+        background: #f4f7fe;
+        color: #2563eb;
+        transform: scale(1.04);
+      }
+
+      @media (max-width: 700px) {
+        .hizmetler {
+          gap: 7px;
+        }
+        .hizmet-kutu {
+          width: 45vw;
+          min-width: 110px;
+          font-size: 0.92em;
+          padding: 9px 2px 7px 2px;
+          min-height: 58px;
+        }
+        h1.section-title {
+          font-size: 1.08em;
+          margin-top: 1.3em;
+        }
+      }
+
+      .yorumlar-section {
+        max-width: 600px;
+        margin: 36px auto 0 auto;
+        padding: 0 8px;
+      }
+      .yorumlar-title {
+        color: #2563eb;
+        font-size: 1.12em;
+        margin-bottom: 0.9em;
         font-weight: 600;
       }
-      .navbar-nav .nav-link.active {
-        color: #dbeafe !important;
-      }
-      .hizmet-card {
-        background: #fff;
-        border-radius: 14px;
-        box-shadow: 0 2px 8px #cbd5e1;
-        border: 2px solid #dbeafe;
-        transition: box-shadow 0.18s, border-color 0.18s;
-        cursor: pointer;
-        min-height: 90px;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        font-size: 1.12em;
-        margin-bottom: 18px;
-        padding: 1.1rem 1.5rem;
-        font-weight: 500;
-        color: #0f172a;
-        text-decoration: none;
-      }
-      .hizmet-card:hover {
-        border-color: #2563eb;
-        box-shadow: 0 4px 16px #2563eb22;
-        color: #2563eb;
-      }
-      .hizmet-card .bi {
-        color: #2563eb;
-        font-size: 2em;
-      }
-      .mini-uyari {
-        color: #f59e42;
-        font-size: 0.97em;
-        margin-top: 18px;
+      .yorum {
+        background: #e0e7ef;
+        margin-bottom: 10px;
+        padding: 10px 14px 8px 14px;
+        border-radius: 9px;
+        font-size: 0.98em;
+        line-height: 1.55;
+        color: #222;
+        box-shadow: 0 1px 5px #2563eb09;
       }
       footer {
         background: #1e293b;
         color: #fff;
-        padding: 22px 0 12px 0;
+        padding: 23px 0 14px 0;
+        text-align: center;
+        font-size: 1em;
+        margin-top: 26px;
       }
       footer a {
         color: #dbeafe;
         text-decoration: none;
-        margin: 0 8px;
+        margin: 0 9px;
+        font-size: 0.97em;
       }
-      .yorum {
-        background: #e0e7ef;
-        margin-bottom: 0.7em;
-        padding: 0.7em 1em;
-        border-radius: 9px;
+      footer a:hover {
+        color: #ffe44b;
+      }
+      .footer-mini {
+        font-size: 0.93em;
+        color: #ffe44b;
+        margin-top: 7px;
       }
     </style>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg shadow-sm">
-      <div class="container">
-        <a class="navbar-brand" href="index.html"
-          ><i class="bi bi-house-gear"></i> Teknik Servis</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainNav"
-          aria-controls="mainNav"
-          aria-expanded="false"
-          aria-label="Menüyü Aç"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Ana Sayfa</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="hizmetlerimiz.html"
-                >Hizmetlerimiz</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="iletisim.html">İletişim</a>
-            </li>
-          </ul>
-        </div>
+    <header>
+      <div class="navbar">
+        <span class="navbar-title">Teknik Servis</span>
+        <nav class="navbar-links">
+          <a class="active" href="hizmetlerimiz.html">Hizmetlerimiz</a>
+          <a href="hakkimizda.html">Hakkımızda</a>
+          <a href="iletisim.html">İletişim</a>
+        </nav>
       </div>
-    </nav>
+    </header>
+    <main>
+      <h1 class="section-title">Hizmetlerimiz</h1>
+      <div class="desc">
+        Tüm hizmetlerimize aşağıdan ulaşabilir ve detay sayfalarımıza
+        gidebilirsiniz.
+      </div>
+      <div class="hizmetler">
+        <a
+          class="hizmet-kutu"
+          href="hizmet.html?service=Beyaz%20Eşya%20Servisi"
+        >
+          <span class="emoji">🧊</span>
+          Beyaz Eşya Servisi
+        </a>
+        <a class="hizmet-kutu" href="hizmet.html?service=Buzdolabı%20Servisi">
+          <span class="emoji">❄️</span>
+          Buzdolabı Servisi
+        </a>
+        <a class="hizmet-kutu" href="hizmet.html?service=Çamaşır%20Makinesi">
+          <span class="emoji">🧺</span>
+          Çamaşır Makinesi
+        </a>
+        <a class="hizmet-kutu" href="hizmet.html?service=Bulaşık%20Makinesi">
+          <span class="emoji">🍽️</span>
+          Bulaşık Makinesi
+        </a>
+        <a class="hizmet-kutu" href="hizmet.html?service=Fırın">
+          <span class="emoji">🔥</span>
+          Fırın
+        </a>
+        <a class="hizmet-kutu" href="hizmet.html?service=Klima">
+          <span class="emoji">🌬️</span>
+          Klima
+        </a>
+        <a class="hizmet-kutu" href="hizmet.html?service=Kombi">
+          <span class="emoji">💧</span>
+          Kombi
+        </a>
+        <a class="hizmet-kutu" href="hizmet.html?service=Televizyon">
+          <span class="emoji">📺</span>
+          Televizyon
+        </a>
+      </div>
 
-    <main class="container py-5">
-      <h1 class="text-primary mb-4 fw-bold">
-        <i class="bi bi-list-task"></i> Hizmetlerimiz
-      </h1>
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <a href="hizmet.html?service=Beyaz+Eşya+Servisi" class="hizmet-card"
-            ><i class="bi bi-tools"></i> Beyaz Eşya Servisi</a
-          >
-          <a href="hizmet.html?service=Buzdolabı" class="hizmet-card"
-            ><i class="bi bi-snow"></i> Buzdolabı</a
-          >
-          <a href="hizmet.html?service=Çamaşır+Makinesi" class="hizmet-card"
-            ><i class="bi bi-droplet-half"></i> Çamaşır Makinesi</a
-          >
-          <a href="hizmet.html?service=Bulaşık+Makinesi" class="hizmet-card"
-            ><i class="bi bi-cup-hot"></i> Bulaşık Makinesi</a
-          >
+      <section class="yorumlar-section">
+        <div class="yorumlar-title">Müşteri Yorumları</div>
+        <div class="yorum">
+          <b>Ayhan D.:</b> Servis tam zamanında geldi, çok memnun kaldım.
         </div>
-        <div class="col-12 col-md-6">
-          <a href="hizmet.html?service=Fırın" class="hizmet-card"
-            ><i class="bi bi-egg-fried"></i> Fırın</a
-          >
-          <a href="hizmet.html?service=Klima" class="hizmet-card"
-            ><i class="bi bi-wind"></i> Klima</a
-          >
-          <a href="hizmet.html?service=Kombi" class="hizmet-card"
-            ><i class="bi bi-fire"></i> Kombi</a
-          >
-          <a href="hizmet.html?service=Televizyon" class="hizmet-card"
-            ><i class="bi bi-tv"></i> Televizyon</a
-          >
+        <div class="yorum">
+          <b>Gülşen S.:</b> Kombi bakımı için çok uygun fiyat aldım, işçilik
+          harikaydı.
         </div>
-      </div>
-      <h2 class="h4 section-title mt-5 mb-3">Müşteri Yorumları</h2>
-            <div class="yorum">
-              <b>Ayhan D.:</b> Servis tam zamanında geldi, çok memnun kaldım.
-            </div>
-            <div class="yorum">
-              <b>Gülşen S.:</b> Kombi bakımı için çok uygun fiyat aldım, işçilik
-              harikaydı.
-            </div>
-            <div class="yorum">
-              <b>Burak E.:</b> Hızlı ve güvenilirler, tekrar ararım.
-            </div>
-            <div class="yorum">
-              <b>Elif M.:</b> Klimamın arızası anında çözüldü, çok teşekkürler!
-            </div>
-            <div class="yorum">
-              <b>Furkan T.:</b> Garantisi bitmiş buzdolabımı hemen tamir
-              ettiler.
-            </div>
-          </div>
-          
-            <div class="yorum">
-              <b>Cansu K.:</b> Çamaşır makinesi için gelen usta çok bilgiliydi,
-              tavsiye ederim.
-            </div>
-            <div class="yorum">
-              <b>Levent Y.:</b> Parça değişimi ve fiyat konusunda çok şeffaflar,
-              güvenim tam.
-            </div>
-            <div class="yorum">
-              <b>Zeynep Ç.:</b> Hem hızlı dönüş hem de güler yüzlü hizmet aldım.
-            </div>
-            <div class="yorum">
-              <b>Serkan B.:</b> Eski fırınımı çalışır hale getirdiler, teşekkür
-              ederim.
-            </div>
-            <div class="yorum">
-              <b>Hülya P.:</b> Sadece bir telefonla randevu aldım, aynı gün
-              sorunum çözüldü.
-            </div>
-            <div class="yorum">
-              <b>Oktay S.:</b> Tüm işlemler şeffaf yapıldı, güven verdi.
-            </div>
-            <div class="yorum">
-              <b>Merve T.:</b> Hem uygun fiyat hem de temiz işçilik aldım.
-            </div>
-            <div class="yorum">
-              <b>Barış K.:</b> Klima arızasında anında yardımcı oldular.
-            </div>
-            <div class="yorum">
-              <b>Fatma A.:</b> Randevu saatine tam zamanında geldiler.
-            </div>
-            <div class="yorum">
-              <b>Hasan İ.:</b> Tecrübeli ve güleryüzlü personel, herkese tavsiye
-              ederim.
-            </div>
-          </div>
+        <div class="yorum">
+          <b>Burak E.:</b> Hızlı ve güvenilirler, tekrar ararım.
         </div>
-      </div>
-      <div class="mini-uyari">
-        Not: Teknik Servis yalnızca garantisi sona ermiş ürünlere hizmet verir,
-        <b>yetkili servis değildir</b>.
-      </div>
+        <div class="yorum">
+          <b>Elif M.:</b> Klimamın arızası anında çözüldü, çok teşekkürler!
+        </div>
+        <div class="yorum">
+          <b>Furkan T.:</b> Garantisi bitmiş buzdolabımı hemen tamir ettiler.
+        </div>
+        <div class="yorum">
+          <b>Cansu K.:</b> Çamaşır makinesi için gelen usta çok bilgiliydi,
+          tavsiye ederim.
+        </div>
+        <div class="yorum">
+          <b>Levent Y.:</b> Parça değişimi ve fiyat konusunda çok şeffaflar,
+          güvenim tam.
+        </div>
+        <div class="yorum">
+          <b>Zeynep Ç.:</b> Hem hızlı dönüş hem de güler yüzlü hizmet aldım.
+        </div>
+      </section>
     </main>
-
-    <footer class="mt-5">
-      <div class="container text-center">
-        <div>
-          <a href="index.html">Ana Sayfa</a> |
-          <a href="hizmetlerimiz.html">Hizmetlerimiz</a> |
-          <a href="hakkimizda.html">Hakkımızda</a> |
-          <a href="iletisim.html">İletişim</a> |
-          <a href="gizlilik.html">Gizlilik Politikası</a> |
-          <a href="kvkk.html">KVKK</a>
-        </div>
-
-        <div class="mt-2" style="font-size: 0.93em">Teknik Servis © 2024</div>
+    <footer>
+      <div>
+        <a href="index.html">Ana Sayfa</a> |
+        <a href="hizmetlerimiz.html">Hizmetlerimiz</a> |
+        <a href="hakkimizda.html">Hakkımızda</a> |
+        <a href="iletisim.html">İletişim</a> |
+        <a href="gizlilik.html">Gizlilik Politikası</a> |
+        <a href="kvkk.html">KVKK</a>
       </div>
+      <div class="footer-mini">
+        Bu hizmet yalnızca garantisi sona ermiş cihazlar içindir.
+        <b>Yetkili servis değiliz.</b>
+      </div>
+      <div style="margin-top: 5px; font-size: 0.96em">Teknik Servis © 2024</div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
