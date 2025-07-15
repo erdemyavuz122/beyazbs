@@ -2,39 +2,8 @@
 <html lang="tr">
   <head>
     <meta charset="UTF-8" />
-    <title>Teknik Servis | Beyaz Eşya Servisi ve Destek</title>
+    <title id="dynamicTitle">Hizmet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Favicon & Apple Touch Icon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Teknik Servis | Beyaz Eşya Servisi" />
-    <meta
-      property="og:description"
-      content="Garantisi bitmiş beyaz eşyalarınız için hızlı, ekonomik ve güvenilir servis. Hemen arayın!"
-    />
-    <meta
-      property="og:image"
-      content="https://www.ornekdomain.com/social-image.png"
-    />
-    <meta property="og:url" content="https://www.ornekdomain.com/" />
-    <meta property="og:type" content="website" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Teknik Servis | Beyaz Eşya Servisi" />
-    <meta
-      name="twitter:description"
-      content="Garantisi bitmiş beyaz eşyalarınız için hızlı, ekonomik ve güvenilir servis. Hemen arayın!"
-    />
-    <meta
-      name="twitter:image"
-      content="https://www.ornekdomain.com/social-image.png"
-    />
-
-    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -43,7 +12,6 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-
     <style>
       body {
         background: #f7faff;
@@ -51,22 +19,7 @@
       .navbar {
         background: #2563eb;
       }
-      .navbar-brand {
-        background: #dbeafe;
-        color: #2563eb !important;
-        border-radius: 16px;
-        padding: 9px 28px 9px 18px;
-        font-size: 1.35em;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        gap: 0.65em;
-        box-shadow: 0 2px 8px #2563eb22;
-      }
-      .navbar-brand:hover {
-        background: #fff;
-        color: #1e293b !important;
-      }
+      .navbar-brand,
       .navbar-nav .nav-link {
         color: #fff !important;
         font-weight: 600;
@@ -77,140 +30,47 @@
       .call-btn {
         background: #2563eb;
         color: #fff;
-        font-weight: 700;
+        font-weight: 600;
         border-radius: 16px;
-        font-size: 1.45em;
-        padding: 16px 0;
-        text-align: center;
-        margin: 1.5em 0 1.2em 0;
-        box-shadow: 0 2px 12px #2563eb22;
-        transition: background 0.16s;
       }
       .call-btn:hover {
-        background: #1744a0;
+        background: #1e40af;
         color: #fff;
-        text-decoration: none;
-        box-shadow: 0 4px 18px #2563eb33;
-        transform: scale(1.03);
       }
-      .call-mini {
-        display: inline-block;
-        margin-top: 10px;
-        font-size: 1.1em;
-        color: #2563eb;
-        background: #dbeafe;
-        border-radius: 10px;
-        padding: 7px 16px;
-        font-weight: 600;
-        box-shadow: 0 1px 6px #2563eb14;
-        text-decoration: none;
-        transition: background 0.15s;
-      }
-      .call-mini:hover {
+      .makale-section {
         background: #fff;
-        color: #1e293b;
-        text-decoration: none;
+        border-radius: 14px;
+        box-shadow: 0 2px 8px #cbd5e1;
+        padding: 2rem 1.2rem;
+        margin-top: 2rem;
+      }
+      .yorumlar {
+        margin-top: 2.5rem;
       }
       .yorum {
         background: #e0e7ef;
-        margin-bottom: 0.7em;
-        padding: 0.7em 1em;
-        border-radius: 9px;
-      }
-      .carousel-inner {
-        min-height: 255px;
-      }
-      .carousel .yorum {
-        font-size: 1.06em;
-      }
-      .makale-box {
-        background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 2px 14px #2563eb13;
-        padding: 2.5rem 2rem 2.5rem 2rem;
-        margin: 48px 0 50px 0;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .makale-box h2,
-      .makale-box h3 {
-        color: #2563eb;
-        font-weight: 700;
-        margin-top: 1.2em;
-        margin-bottom: 0.6em;
-      }
-      .makale-box h1 {
-        color: #1744a0;
-        font-size: 1.55em;
-        margin-bottom: 1em;
-        font-weight: 800;
-      }
-      .section-title {
-        color: #2563eb;
-        font-weight: 700;
+        margin: 0.5rem 0;
+        padding: 0.8rem 1rem;
+        border-radius: 10px;
       }
       .mini-uyari {
         color: #f59e42;
-        font-size: 0.98em;
-        margin-top: 20px;
+        font-size: 0.97em;
+        margin-top: 18px;
       }
       footer {
         background: #1e293b;
         color: #fff;
-        padding: 24px 0 16px 0;
+        padding: 22px 0 12px 0;
       }
       footer a {
         color: #dbeafe;
         text-decoration: none;
-        margin: 0 9px;
+        margin: 0 8px;
       }
-      .carousel-nav-custom {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-top: 10px;
-      }
-      .carousel-nav-custom button {
-        width: 46px;
-        height: 46px;
-        background: #2563eb;
-        border-radius: 50%;
-        border: none;
-        box-shadow: 0 2px 7px #2563eb11;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background 0.14s;
-      }
-      .carousel-nav-custom button:hover {
-        background: #1744a0;
-      }
-      .carousel-nav-custom .carousel-control-prev-icon,
-      .carousel-nav-custom .carousel-control-next-icon {
-        width: 2rem;
-        height: 2rem;
-      }
-      @media (max-width: 700px) {
-        .navbar-brand {
-          font-size: 1em;
-          padding: 10px 10px 10px 12px;
-        }
-        .makale-box {
-          padding: 1.4rem 0.7rem;
-        }
-        .carousel-nav-custom {
-          gap: 0.8rem;
-        }
-        .carousel-nav-custom button {
-          width: 38px;
-          height: 38px;
-        }
-        .carousel-nav-custom .carousel-control-prev-icon,
-        .carousel-nav-custom .carousel-control-next-icon {
-          width: 1.2rem;
-          height: 1.2rem;
-        }
+      .makale-box {
+        padding: 10px;
+        margin: 20px;
       }
     </style>
   </head>
@@ -218,10 +78,9 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg shadow-sm">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <i class="bi bi-house-gear" style="font-size: 1.2em"></i>
-          Teknik Servis
-        </a>
+        <a class="navbar-brand" href="index.html"
+          ><i class="bi bi-house-gear"></i>Teknik Servis</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -236,7 +95,7 @@
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="index.html">Ana Sayfa</a>
+              <a class="nav-link" href="index.html">Ana Sayfa</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a>
@@ -260,19 +119,11 @@
 
     <!-- İçerik -->
     <main class="container py-5">
-      <h1 class="display-5 fw-bold section-title mb-3">
-        Beyaz Eşya Servisi & Teknik Destek
-      </h1>
-      <p class="lead mb-3">
-        Garantisi bitmiş beyaz eşyalarınız için hızlı, ekonomik ve güvenilir
-        servis. <b>Hemen şimdi arayın, teknik destek alın!</b>
-      </p>
-      <a class="btn call-btn w-100" href="tel:05555555555">
-        <i class="bi bi-telephone-fill"></i> 0555 555 5555 &nbsp; | &nbsp; Hemen
-        Ara & Destek Al
+      <h1 class="fw-bold text-primary mb-3" id="hizmetBaslik">Hizmet</h1>
+      <a class="btn call-btn mb-4" href="tel:05555555555">
+        <i class="bi bi-telephone-fill"></i> 0555 555 5555 Hemen Ara!
       </a>
 
-      <!-- Müşteri Yorumları Slider -->
       <h2 class="h4 section-title mt-5 mb-3">Müşteri Yorumları</h2>
       <div
         id="yorumlarSlider"
@@ -340,34 +191,14 @@
           </div>
         </div>
       </div>
-      <!-- Oklar alta, ortaya -->
-      <div class="carousel-nav-custom">
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#yorumlarSlider"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Önceki</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#yorumlarSlider"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Sonraki</span>
-        </button>
-      </div>
 
-      <!-- Makale Kutusu -->
-      <div class="makale-box mt-5">
+      <!-- Makale İçeriği -->
+      <div className="makale-box">
         <h1>
           Beyaz Eşyalar: Modern Hayatın Vazgeçilmezi, Bakım ve Tamirde
           Profesyonel Yaklaşım
         </h1>
+
         <h2>Giriş</h2>
         <p>
           Günümüzde teknolojinin sunduğu imkanlar, günlük yaşamı büyük oranda
@@ -379,19 +210,241 @@
           uzun vadede verim almak ve olası arızalarda maddi kayıpları en aza
           indirmek için düzenli bakım ve profesyonel tamir uygulamaları şarttır.
         </p>
-        <!-- ...Makalenin devamı... -->
-        <!-- Örnek olması için giriş kısmı bırakıldı, tamamını ekleyebilirsin. -->
+
+        <h2>Beyaz Eşyaların Önemi ve Kullanım Alanları</h2>
+        <p>
+          Beyaz eşyalar, yalnızca konutlarda değil, aynı zamanda otellerde,
+          restoranlarda, hastanelerde ve daha pek çok endüstriyel alanda da
+          kullanılmaktadır. Buzdolapları ve derin dondurucular, gıda ürünlerinin
+          taze kalmasını sağlarken; çamaşır ve bulaşık makineleri ise hijyenin
+          korunmasına yardımcı olmaktadır. Fırınlar ve mikrodalga cihazlar,
+          yemek hazırlama süreçlerini kolaylaştırırken, klima ve ısıtıcılar da
+          ortam konforunu sağlamaktadır.
+        </p>
+        <p>
+          Bu cihazların modern yaşamın vazgeçilmez bir parçası haline gelmesinin
+          başlıca nedeni, insan gücünü minimuma indirerek yüksek verimlilik
+          sunmalarıdır. Ancak, bu verimliliğin sürdürülebilirliği, düzenli bakım
+          ve bilinçli kullanım ile mümkündür.
+        </p>
+
+        <h2>Beyaz Eşyaların Temel Bakım Prensipleri</h2>
+        <p>
+          Beyaz eşyaların ömrünü uzatmak ve performansını korumak için düzenli
+          bakım şarttır. Bakım işlemleri, çoğunlukla cihazın kullanım
+          kılavuzunda belirtilen adımlar doğrultusunda yapılmalıdır. Aşağıda, en
+          çok kullanılan beyaz eşyalar için temel bakım önerileri yer
+          almaktadır:
+        </p>
+
+        <h3>1. Buzdolabı ve Derin Dondurucu</h3>
+        <ul>
+          <li>
+            <strong>Temizlik:</strong> Buzdolabının içi düzenli aralıklarla
+            boşaltılarak, nemli ve hafif deterjanlı bir bez ile silinmelidir.
+            Koku oluşumunu önlemek için doğal karbonat kullanılabilir.
+          </li>
+          <li>
+            <strong>Havalandırma:</strong> Cihazın arkasındaki havalandırma
+            ızgaralarının temiz ve açık olmasına dikkat edilmelidir.
+          </li>
+          <li>
+            <strong>Buz Çözme:</strong> Eski tip dondurucularda biriken buz,
+            cihazın performansını düşürebileceği için belirli periyotlarla buz
+            çözme işlemi yapılmalıdır.
+          </li>
+          <li>
+            <strong>Kapı Contası Kontrolü:</strong> Kapı lastiklerinin
+            sızdırmazlığını koruması için düzenli olarak silinmesi ve
+            gerektiğinde değiştirilmesi gerekir.
+          </li>
+        </ul>
+
+        <h3>2. Çamaşır Makinesi</h3>
+        <ul>
+          <li>
+            <strong>Filtre Temizliği:</strong> Makinenin altında yer alan filtre
+            periyodik olarak temizlenmelidir.
+          </li>
+          <li>
+            <strong>Lastik ve Kapak Bakımı:</strong> Kapak lastiğinde biriken
+            kirler temizlenmeli, makine boş çalıştırılarak iç aksam hijyenik
+            tutulmalıdır.
+          </li>
+          <li>
+            <strong>Deterjan Bölmesi:</strong> Deterjan ve yumuşatıcı bölmeleri
+            çıkarılıp su altında yıkanmalıdır.
+          </li>
+          <li>
+            <strong>Aşırı Yüklemeden Kaçının:</strong> Makine kapasitesinin
+            üzerinde çamaşır yüklemek, hem performansı düşürür hem de arıza
+            riskini artırır.
+          </li>
+        </ul>
+
+        <h3>3. Bulaşık Makinesi</h3>
+        <ul>
+          <li>
+            <strong>Pervane ve Fıskiye Temizliği:</strong> Dönmeyen veya tıkanan
+            fıskiyeler düzenli olarak çıkarılıp temizlenmelidir.
+          </li>
+          <li>
+            <strong>Filtre Bakımı:</strong> Suda biriken yemek artıkları
+            filtrede birikebilir, bu nedenle haftalık olarak filtre temizliği
+            önerilir.
+          </li>
+          <li>
+            <strong>Tuz ve Parlatıcı Seviyesi:</strong> Makine tuzu ve parlatıcı
+            eksik olmamalı, belirli aralıklarla takviye edilmelidir.
+          </li>
+        </ul>
+
+        <h3>4. Fırın ve Ocak</h3>
+        <ul>
+          <li>
+            <strong>Düzenli Temizlik:</strong> Pişirme işlemi bittikten sonra
+            cihaz soğuduğunda yüzeyler ve ızgaralar silinmeli, yanık kalıntılar
+            birikmemelidir.
+          </li>
+          <li>
+            <strong>Gaz Kaçağı Kontrolü:</strong> Gazlı ocaklarda hortumlar ve
+            bağlantı noktaları düzenli aralıklarla kontrol edilmelidir.
+          </li>
+          <li>
+            <strong>Fan ve Rezistans Temizliği:</strong> Fırınlarda bulunan fan
+            ve ısıtıcı rezistanslar aşırı yağlanırsa cihazın verimi düşer.
+          </li>
+        </ul>
+
+        <h2>Sık Karşılaşılan Arızalar ve Müdahale Yöntemleri</h2>
+        <p>
+          Beyaz eşyalarda görülen arızalar çoğunlukla yanlış kullanım, bakım
+          eksikliği veya üretim hatalarından kaynaklanmaktadır. Aşağıda en
+          yaygın sorunlardan bazıları ve önerilen ilk müdahale adımları yer
+          almaktadır:
+        </p>
+        <ul>
+          <li>
+            <strong>Buzdolabı Soğutmuyor:</strong> Cihazın priz bağlantısı ve
+            termostat ayarları kontrol edilmeli, havalandırma delikleri kapalı
+            ise temizlenmelidir. Arıza devam ederse teknik servis çağrılmalıdır.
+          </li>
+          <li>
+            <strong>Çamaşır Makinesi Su Almıyor:</strong> Su giriş hortumları,
+            vana ve filtre tıkanıklığı kontrol edilmelidir. Sorun devam ederse
+            pompa veya elektronik kart arızası olabilir.
+          </li>
+          <li>
+            <strong>Bulaşık Makinesi Yıkamıyor:</strong> Deterjan bölmesi,
+            fıskiyeler ve filtre kontrol edilmeli, arıza devam ederse su pompası
+            veya motor arızası söz konusu olabilir.
+          </li>
+          <li>
+            <strong>Fırın Isıtmıyor:</strong> Termostat, rezistans ve güç
+            bağlantıları kontrol edilmelidir. Ciddi durumlarda fırın içi
+            rezistans değişimi gerekebilir.
+          </li>
+        </ul>
+        <p>
+          Kullanıcıların, cihazları güçten çekmeden veya güvenlik önlemi almadan
+          müdahalede bulunmaması gerekmektedir. Özellikle elektrikli ve gazlı
+          cihazlarda, yetkisiz müdahaleler ciddi tehlikelere yol açabilir.
+        </p>
+
+        <h2>Profesyonel Tamirin Önemi</h2>
+        <p>
+          Birçok kullanıcı, maliyetten tasarruf etmek amacıyla arızaları kendi
+          başına çözmeye çalışsa da, profesyonel servis hizmetleri her zaman
+          daha güvenli ve kalıcı çözümler sunar. Yetkili servislerin avantajları
+          aşağıda sıralanmıştır:
+        </p>
+        <ul>
+          <li>
+            <strong>Garanti Kapsamı:</strong> Yetkili servisler, cihazın garanti
+            kapsamında kalmasını sağlar ve orijinal yedek parça kullanır.
+          </li>
+          <li>
+            <strong>Eğitimli Personel:</strong> Teknik personel, cihazın marka
+            ve modeline uygun özel eğitimden geçmiştir.
+          </li>
+          <li>
+            <strong>Güvenlik:</strong> Elektrik ve gaz bağlantılarında güvenlik
+            önlemleri alınır, yangın veya zehirlenme riskleri en aza indirilir.
+          </li>
+          <li>
+            <strong>Kalıcı Çözüm:</strong> Geçici onarımlar yerine uzun vadeli,
+            kalıcı çözümler sunulur.
+          </li>
+        </ul>
+        <p>
+          Ayrıca profesyonel servisler, arızaların kaynağını doğru şekilde
+          tespit edip, ileride oluşabilecek daha büyük sorunları da
+          önleyebilirler. Bu durum, hem cihaz ömrünün uzamasını hem de enerji
+          verimliliğinin korunmasını sağlar.
+        </p>
+
+        <h2>Sık Yapılan Hatalar ve Dikkat Edilmesi Gerekenler</h2>
+        <p>
+          Beyaz eşyaların bakımında yapılan bazı yaygın hatalar, cihazın ömrünü
+          kısaltabilir ve arıza riskini artırabilir. İşte sıkça karşılaşılan
+          hatalar ve bunlardan kaçınmak için öneriler:
+        </p>
+        <ul>
+          <li>
+            <strong>Aşırı Kimyasal Kullanımı:</strong> Temizlikte yoğun kimyasal
+            kullanmak, cihazın iç aksamına zarar verebilir. Mümkün olduğunca
+            doğal veya üretici tarafından önerilen temizlik ürünleri tercih
+            edilmelidir.
+          </li>
+          <li>
+            <strong>Kullanım Kılavuzunun İhmal Edilmesi:</strong> Her cihazın
+            kendine özgü kullanım talimatları vardır. Kullanım kılavuzu
+            okunmadan yapılan işlemler cihazda beklenmedik hasarlara yol
+            açabilir.
+          </li>
+          <li>
+            <strong>Periyodik Bakımın Atlanması:</strong> Filtre temizliği,
+            conta bakımı ve genel temizlik gibi işlemler ihmal edildiğinde cihaz
+            arızaları kaçınılmaz olur.
+          </li>
+          <li>
+            <strong>Yanlış Kurulum:</strong> Cihazın düzgün yerleştirilmemesi,
+            eğri zeminde çalıştırılması veya hatalı elektrik/gaz bağlantısı uzun
+            vadede ciddi arızalara neden olabilir.
+          </li>
+        </ul>
+
+        <h2>Enerji Verimliliği ve Çevresel Etki</h2>
+        <p>
+          Modern beyaz eşyaların bir diğer önemli özelliği de enerji verimliliği
+          sunmalarıdır. A++ ve üzeri enerji sınıfına sahip cihazlar, hem
+          elektrik tüketimini azaltır hem de karbon ayak izini düşürür. Eski tip
+          cihazların, enerji tasarruflu yeni modellerle değiştirilmesi hem
+          faturaları düşürür hem de çevreye katkı sağlar. Ayrıca eski ve
+          verimsiz cihazların profesyonel şekilde geri dönüşüme kazandırılması
+          da çevresel sürdürülebilirlik açısından önemlidir.
+        </p>
+
+        <h2>Sonuç</h2>
+        <p>
+          Beyaz eşyalar, yaşamımızın vazgeçilmez bir parçası olup, sağladıkları
+          konfor ve tasarruf ile günlük hayatı büyük oranda kolaylaştırmaktadır.
+          Ancak bu cihazlardan maksimum verim almak ve uzun ömürlü kullanım
+          sağlamak için düzenli bakım ve bilinçli kullanım şarttır. Cihazlarda
+          meydana gelen arızalarda, kullanıcı müdahalesi yerine, yetkili ve
+          profesyonel servislerden destek alınmalıdır. Unutulmamalıdır ki, doğru
+          bakım ve zamanında yapılan profesyonel tamir, hem maddi kayıpları
+          önler hem de güvenli, sürdürülebilir bir kullanım sunar.
+        </p>
       </div>
 
-      <!-- Telefon numarasına tekrar yönlendiren alan -->
-      <div class="text-center mb-4">
-        <a class="call-mini" href="tel:05555555555">
-          <i class="bi bi-telephone"></i> 0555 555 5555 | Şimdi Ara & Bilgi Al
-        </a>
+      <div class="mini-uyari">
+        Not: Bu hizmet yalnızca garantisi sona ermiş cihazlar içindir.
+        <b>Yetkili servis değiliz.</b>
       </div>
     </main>
 
-    <footer class="mt-4">
+    <footer class="mt-5">
       <div class="container text-center">
         <div>
           <a href="index.html">Ana Sayfa</a> |
@@ -401,13 +454,23 @@
           <a href="gizlilik.html">Gizlilik Politikası</a> |
           <a href="kvkk.html">KVKK</a>
         </div>
-        <div class="mt-2 mini-uyari">
-          Bu hizmet yalnızca garantisi sona ermiş cihazlar içindir.
-          <b>Yetkili servis değiliz.</b>
-        </div>
-        <div class="mt-2" style="font-size: 0.95em">Teknik Servis © 2024</div>
+
+        <div class="mt-2" style="font-size: 0.93em">Teknik Servis © 2024</div>
       </div>
     </footer>
+
+    <script>
+      // Sayfa parametresinden başlık çekme (Bootstrap JS gerekmez)
+      function getQueryParam(name) {
+        let url = new URL(window.location.href);
+        return url.searchParams.get(name) || "Hizmet";
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        var service = getQueryParam("service").replace(/\+/g, " ");
+        document.title = service + " | Teknik Servis";
+        document.getElementById("hizmetBaslik").innerText = service;
+      });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
