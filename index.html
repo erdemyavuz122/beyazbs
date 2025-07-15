@@ -80,9 +80,17 @@
         font-size: 0.97em;
         margin-top: 18px;
       }
-      navbar-brand {
-        cursor: pointer;
-        transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+      .navbar-brand {
+        background: #dbeafe;
+        color: #2563eb !important;
+        border-radius: 14px;
+        padding: 5px;  /* üst-sağ-alt-sol */
+        font-size: 1.45em;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;   /* simge ile yazı arası mesafe */
+        box-shadow: 0 2px 8px #2563eb22;
       }
       .navbar-brand.active,
       .navbar-brand:hover,
@@ -92,6 +100,12 @@
         border-radius: 8px;
         box-shadow: 0 2px 8px #2563eb22;
       }
+      .yorum {
+        background: #e0e7ef;
+        margin-bottom: 0.8em;
+        padding: 0.8em 1em;
+        border-radius: 10px;
+      }
     </style>
   </head>
   <body>
@@ -99,9 +113,8 @@
     <nav class="navbar navbar-expand-lg shadow-sm">
       <div class="container">
         <a class="navbar-brand active" href="index.html"
-          ><i class="bi bi-house-gear">i class="bi bi-house-gear"></i>Teknik
-          Servis</a
-        >
+          ><i class="bi bi-house-gear"></i> Teknik Servis
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -227,24 +240,53 @@
         </div>
       </div>
 
-      <section class="yorumlar">
-        <h2 class="h4 text-primary mt-5">Müşteri Yorumları</h2>
-        <div class="yorum">
-          <b>Ali V.:</b> Çok hızlı geldiler, fiyatları uygundu.
+      <!-- Yorumlar Slider 1 -->
+      <div
+        id="yorumSlider1"
+        class="carousel slide mb-4 mt-4"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="yorum">
+              <b>Ayhan D.:</b> Servis tam zamanında geldi, çok memnun kaldım.
+            </div>
+            <div class="yorum">
+              <b>Gülşen S.:</b> Kombi bakımı için çok uygun fiyat aldım, işçilik
+              harikaydı.
+            </div>
+            <div class="yorum">
+              <b>Burak E.:</b> Hızlı ve güvenilirler, tekrar ararım.
+            </div>
+            <div class="yorum">
+              <b>Elif M.:</b> Klimamın arızası anında çözüldü, çok teşekkürler!
+            </div>
+            <div class="yorum">
+              <b>Furkan T.:</b> Garantisi bitmiş buzdolabımı hemen tamir
+              ettiler.
+            </div>
+            <div class="yorum">
+              <b>Cansu K.:</b> Çamaşır makinesi için gelen usta çok bilgiliydi,
+              tavsiye ederim.
+            </div>
+            <div class="yorum">
+              <b>Levent Y.:</b> Parça değişimi ve fiyat konusunda çok şeffaflar,
+              güvenim tam.
+            </div>
+            <div class="yorum">
+              <b>Zeynep Ç.:</b> Hem hızlı dönüş hem de güler yüzlü hizmet aldım.
+            </div>
+            <div class="yorum">
+              <b>Serkan B.:</b> Eski fırınımı çalışır hale getirdiler, teşekkür
+              ederim.
+            </div>
+            <div class="yorum">
+              <b>Hülya P.:</b> Sadece bir telefonla randevu aldım, aynı gün
+              sorunum çözüldü.
+            </div>
+          </div>
         </div>
-        <div class="yorum">
-          <b>Emine Ç.:</b> Tüm işlemler çok profesyoneldi, tekrar tercih ederim.
-        </div>
-        <div class="yorum">
-          <b>Mustafa B.:</b> Eski bulaşık makinam çalışmıyordu, hemen çözdüler.
-        </div>
-        <div class="yorum">
-          <b>Burcu K.:</b> 7/24 ulaşabildim, klima tamiri sorunsuz oldu.
-        </div>
-        <div class="yorum">
-          <b>Can Y.:</b> Yetkili servis değil ama işlerini çok iyi yapıyorlar!
-        </div>
-      </section>
+
       <div class="mini-uyari">
         Not: Bu site ve servis, sadece garantisi sona ermiş cihazlar için hizmet
         verir. Yetkili servis <b>değiliz</b>.
