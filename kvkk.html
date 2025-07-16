@@ -16,30 +16,83 @@
         background: #2563eb;
         padding: 1em 0 0.9em 0;
       }
-      .navbar {
-        max-width: 970px;
-        margin: auto;
+      .navbar-simple {
+        background: #2563eb;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+      }
+      .navbar-inner {
+        max-width: 1000px;
+        margin: 0 auto;
         display: flex;
         align-items: center;
-        color: #fff;
-        padding: 0 10px;
+        justify-content: space-between;
+        height: 54px;
+        padding: 0 14px;
       }
-      .navbar-title {
-        font-weight: bold;
-        font-size: 1.1em;
-        color: #dbeafe;
-      }
-      .navbar-links a {
+      .nav-logo {
+        font-weight: 800;
+        font-size: 1.15em;
         color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 7px;
         text-decoration: none;
-        font-weight: 500;
-        margin-left: 1em;
+      }
+      .nav-links {
+        display: flex;
+        gap: 18px;
+      }
+      .nav-link {
+        color: #dbeafe;
+        text-decoration: none;
+        font-weight: 700;
         font-size: 1em;
+        transition: color 0.14s;
+        padding: 2px 0;
       }
-      .navbar-links a.active,
-      .navbar-links a:hover {
-        color: #ffe44b;
+      .nav-link:hover {
+        color: #fff;
       }
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2em;
+        margin-left: 8px;
+      }
+      @media (max-width: 620px) {
+        .navbar-inner {
+          flex-direction: row;
+          height: auto;
+        }
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          gap: 0;
+          background: #2563eb;
+          width: 100vw;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 54px;
+          z-index: 99;
+        }
+        .nav-links.show {
+          display: flex;
+        }
+        .nav-link {
+          padding: 12px 22px;
+          font-size: 1.08em;
+          border-bottom: 1px solid #2563eb22;
+        }
+        .nav-toggle {
+          display: block;
+        }
+      }
+
       main {
         max-width: 670px;
         margin: 0 auto;
@@ -95,14 +148,14 @@
   </head>
   <body>
     <header>
-      <div class="navbar">
-        <span class="navbar-title">Teknik Servis</span>
-        <nav class="navbar-links">
-          <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
-          <a href="hakkimizda.html">Hakkımızda</a>
-          <a href="iletisim.html">İletişim</a>
-        </nav>
-      </div>
+      <nav class="navbar">
+        <a href="index.html" class="navbar-title">Teknik Servis</a>
+        <div class="navbar-links">
+          <a href="hizmetlerimiz.html" id="menu-hizmetlerimiz">Hizmetlerimiz</a>
+          <a href="hakkimizda.html" id="menu-hakkimizda">Hakkımızda</a>
+          <a href="iletisim.html" id="menu-iletisim">İletişim</a>
+        </div>
+      </nav>
     </header>
     <main>
       <div class="title">KVKK Aydınlatma Metni</div>
@@ -137,5 +190,10 @@
       </div>
       <div style="margin-top: 5px; font-size: 0.96em">Teknik Servis © 2024</div>
     </footer>
+    <script>
+      document.querySelector(".nav-toggle").onclick = function () {
+        document.querySelector(".nav-links").classList.toggle("show");
+      };
+    </script>
   </body>
 </html>

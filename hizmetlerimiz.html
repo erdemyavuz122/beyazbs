@@ -19,33 +19,83 @@
         background: #2563eb;
         padding: 1.05em 0 1em 0;
       }
-      .navbar {
-        max-width: 970px;
-        margin: auto;
+      .navbar-simple {
+        background: #2563eb;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+      }
+      .navbar-inner {
+        max-width: 1000px;
+        margin: 0 auto;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        color: #fff;
-        padding: 0 10px;
+        justify-content: space-between;
+        height: 54px;
+        padding: 0 14px;
       }
-      .navbar-title {
-        font-weight: bold;
+      .nav-logo {
+        font-weight: 800;
         font-size: 1.15em;
-        color: #dbeafe;
-      }
-      .navbar-links a {
         color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 7px;
         text-decoration: none;
-        font-weight: 500;
-        margin-left: 1em;
+      }
+      .nav-links {
+        display: flex;
+        gap: 18px;
+      }
+      .nav-link {
+        color: #dbeafe;
+        text-decoration: none;
+        font-weight: 700;
         font-size: 1em;
-        transition: color 0.12s;
+        transition: color 0.14s;
+        padding: 2px 0;
       }
-      .navbar-links a:hover,
-      .navbar-links a.active {
-        color: #ffe44b;
-        text-decoration: underline;
+      .nav-link:hover {
+        color: #fff;
       }
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2em;
+        margin-left: 8px;
+      }
+      @media (max-width: 620px) {
+        .navbar-inner {
+          flex-direction: row;
+          height: auto;
+        }
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          gap: 0;
+          background: #2563eb;
+          width: 100vw;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 54px;
+          z-index: 99;
+        }
+        .nav-links.show {
+          display: flex;
+        }
+        .nav-link {
+          padding: 12px 22px;
+          font-size: 1.08em;
+          border-bottom: 1px solid #2563eb22;
+        }
+        .nav-toggle {
+          display: block;
+        }
+      }
+
       h1.section-title {
         color: #2563eb;
         font-size: 1.55em;
@@ -162,15 +212,21 @@
   </head>
   <body>
     <header>
-      <div class="navbar">
-        <span class="navbar-title">Teknik Servis</span>
-        <nav class="navbar-links">
-          <a class="active" href="hizmetlerimiz.html">Hizmetlerimiz</a>
-          <a href="hakkimizda.html">Hakkımızda</a>
-          <a href="iletisim.html">İletişim</a>
-        </nav>
-      </div>
+      <nav class="navbar-simple">
+        <div class="navbar-inner">
+          <a href="index.html" class="nav-logo">Teknik Servis</a>
+          <button class="nav-toggle" aria-label="Menüyü Aç/Kapat">
+            &#9776;
+          </button>
+          <div class="nav-links">
+            <a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a>
+            <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+            <a class="nav-link" href="iletisim.html">İletişim</a>
+          </div>
+        </div>
+      </nav>
     </header>
+
     <main>
       <h1 class="section-title">Hizmetlerimiz</h1>
       <div class="desc">
@@ -262,4 +318,9 @@
       <div style="margin-top: 5px; font-size: 0.96em">Teknik Servis © 2024</div>
     </footer>
   </body>
+  <script>
+    document.querySelector(".nav-toggle").onclick = function () {
+      document.querySelector(".nav-links").classList.toggle("show");
+    };
+  </script>
 </html>

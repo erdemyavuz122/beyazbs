@@ -253,22 +253,22 @@
   </head>
   <body>
     <!-- Navbar -->
-    <header class="navbar-simple">
-      <div class="navbar-inner">
-        <span class="nav-logo">Teknik Servis</span>
-        <button
-          class="nav-toggle"
-          onclick="document.querySelector('.nav-links').classList.toggle('show')"
-        >
-          ☰
-        </button>
-        <nav class="nav-links">
-          <a href="hizmetlerimiz.html" class="nav-link">Hizmetlerimiz</a>
-          <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
-          <a href="iletisim.html" class="nav-link">İletişim</a>
-        </nav>
-      </div>
+    <header>
+      <nav class="navbar-simple">
+        <div class="navbar-inner">
+          <a href="index.html" class="nav-logo">Teknik Servis</a>
+          <button class="nav-toggle" aria-label="Menüyü Aç/Kapat">
+            &#9776;
+          </button>
+          <div class="nav-links">
+            <a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a>
+            <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+            <a class="nav-link" href="iletisim.html">İletişim</a>
+          </div>
+        </div>
+      </nav>
     </header>
+
     <main style="max-width: 950px; margin: auto">
       <!-- Call to Action -->
       <a class="call-btn" href="tel:05555555555">
@@ -388,6 +388,8 @@
     </main>
     <!-- Footer -->
     <footer class="mt-4">
+      <div id="footerCompany"></div>
+      <div id="footerPhone"></div>
       <div class="container text-center">
         <div>
           <a href="index.html">Ana Sayfa</a> |

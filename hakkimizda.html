@@ -4,62 +4,126 @@
     <meta charset="UTF-8" />
     <title>Hakkımızda | Teknik Servis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Teknik Servis hakkında detaylar: Deneyimimiz, misyonumuz ve müşteri odaklı yaklaşımımız."
+    />
+    <!-- Favicon & Apple Touch Icon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <style>
       body {
-        margin: 0;
         background: #f7faff;
         font-family: "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        color: #222;
       }
-      header {
+      .navbar-simple {
         background: #2563eb;
-        padding: 1em 0 0.9em 0;
+        position: sticky;
+        top: 0;
+        z-index: 20;
       }
-      .navbar {
-        max-width: 970px;
-        margin: auto;
+      .navbar-inner {
+        max-width: 1000px;
+        margin: 0 auto;
         display: flex;
         align-items: center;
-        color: #fff;
-        padding: 0 10px;
+        justify-content: space-between;
+        height: 54px;
+        padding: 0 14px;
       }
-      .navbar-title {
-        font-weight: bold;
-        font-size: 1.1em;
-        color: #dbeafe;
-      }
-      .navbar-links a {
+      .nav-logo {
+        font-weight: 800;
+        font-size: 1.15em;
         color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 7px;
         text-decoration: none;
-        font-weight: 500;
-        margin-left: 1em;
-        font-size: 1em;
       }
-      .navbar-links a.active,
-      .navbar-links a:hover {
+      .nav-links {
+        display: flex;
+        gap: 18px;
+      }
+      .nav-link {
+        color: #dbeafe;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1em;
+        transition: color 0.14s;
+        padding: 2px 0;
+      }
+      .nav-link:hover {
+        color: #fff;
+      }
+      .nav-link.active {
         color: #ffe44b;
+        text-decoration: underline;
+      }
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2em;
+        margin-left: 8px;
+      }
+      @media (max-width: 620px) {
+        .navbar-inner {
+          flex-direction: row;
+          height: auto;
+        }
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          gap: 0;
+          background: #2563eb;
+          width: 100vw;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 54px;
+          z-index: 99;
+        }
+        .nav-links.show {
+          display: flex;
+        }
+        .nav-link {
+          padding: 12px 22px;
+          font-size: 1.08em;
+          border-bottom: 1px solid #2563eb22;
+        }
+        .nav-toggle {
+          display: block;
+        }
       }
       main {
-        max-width: 570px;
+        max-width: 750px;
         margin: 0 auto;
-        padding: 28px 12px 0 12px;
+        padding: 32px 12px 0 12px;
       }
-      .title {
+      h1 {
         color: #2563eb;
-        font-size: 1.34em;
-        font-weight: 700;
         text-align: center;
+        font-size: 2em;
         margin-bottom: 1.1em;
       }
       .about-box {
         background: #fff;
-        border-radius: 11px;
-        box-shadow: 0 2px 14px #2563eb10;
-        padding: 2em 1.3em 2em 1.3em;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px #2563eb14;
+        padding: 2em 1.2em 2em 1.2em;
+        margin-bottom: 40px;
+      }
+      .about-box h2 {
+        color: #2563eb;
+        font-size: 1.16em;
+        margin: 1.3em 0 0.65em 0;
       }
       .about-box p {
-        margin-bottom: 1em;
+        margin-bottom: 1.1em;
+        font-size: 1.07em;
       }
       footer {
         background: #1e293b;
@@ -67,7 +131,7 @@
         padding: 22px 0 14px 0;
         text-align: center;
         font-size: 1em;
-        margin-top: 32px;
+        margin-top: 30px;
       }
       footer a {
         color: #dbeafe;
@@ -80,42 +144,59 @@
         color: #ffe44b;
         margin-top: 7px;
       }
-      @media (max-width: 600px) {
-        main {
-          padding: 18px 3px 0 3px;
-        }
-        .about-box {
-          padding: 1em 5px;
-        }
-      }
     </style>
   </head>
   <body>
     <header>
-      <div class="navbar">
-        <span class="navbar-title">Teknik Servis</span>
-        <nav class="navbar-links">
-          <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
-          <a href="hakkimizda.html" class="active">Hakkımızda</a>
-          <a href="iletisim.html">İletişim</a>
-        </nav>
-      </div>
+      <nav class="navbar-simple">
+        <div class="navbar-inner">
+          <a href="index.html" class="nav-logo">Teknik Servis</a>
+          <button class="nav-toggle" aria-label="Menüyü Aç/Kapat">
+            &#9776;
+          </button>
+          <div class="nav-links">
+            <a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a>
+            <a class="nav-link active" href="hakkimizda.html">Hakkımızda</a>
+            <a class="nav-link" href="iletisim.html">İletişim</a>
+          </div>
+        </div>
+      </nav>
     </header>
     <main>
-      <div class="title">Hakkımızda</div>
+      <h1>Hakkımızda</h1>
       <div class="about-box">
+        <h2>Teknik Servis Kimdir?</h2>
         <p>
-          Teknik Servis olarak, garantisi sona ermiş beyaz eşya ve ev
-          elektroniği ürünlerinde hızlı, ekonomik ve güvenilir servis hizmeti
-          sunuyoruz. Deneyimli ekibimizle müşteri memnuniyetini ön planda
-          tutuyoruz.
+          Teknik Servis; beyaz eşya, klima ve ev elektroniği konusunda
+          uzmanlaşmış, hızlı ve güvenilir hizmet sunmayı amaçlayan bir teknik
+          servis platformudur. Yılların getirdiği deneyimle, müşteri
+          memnuniyetini her şeyin üzerinde tutarak, tamir ve bakım hizmetlerinde
+          çözüm odaklı yaklaşımımızı sürdürüyoruz.
         </p>
+        <h2>Misyonumuz</h2>
         <p>
-          Tüm servis işlemlerimizde orijinal yedek parça ve profesyonel ekipman
-          kullanıyoruz. Güvenilir ve şeffaf fiyat politikamızla çözüm odaklı
-          yaklaşıyoruz.
+          Amacımız, garantisi sona ermiş cihazlarınızda da uygun fiyatlı, hızlı
+          ve kaliteli servis sağlayarak, yaşamınızı kolaylaştırmak ve evinizdeki
+          cihazların kesintisiz çalışmasını sağlamak.
         </p>
-        <p>Bizimle iletişime geçin, size en kısa sürede destek olalım!</p>
+        <h2>Neden Bizi Tercih Etmelisiniz?</h2>
+        <ul>
+          <li>Hızlı ve zamanında müdahale</li>
+          <li>Alanında uzman ekip</li>
+          <li>Şeffaf fiyatlandırma</li>
+          <li>Müşteri memnuniyeti odaklı yaklaşım</li>
+          <li>7/24 teknik destek hattı</li>
+        </ul>
+        <h2>Bize Ulaşın</h2>
+        <p>
+          Her türlü soru ve öneriniz için
+          <a
+            href="iletisim.html"
+            style="color: #2563eb; text-decoration: underline"
+            >iletişim</a
+          >
+          sayfamızdan bize kolayca ulaşabilirsiniz.
+        </p>
       </div>
     </main>
     <footer>
@@ -133,5 +214,10 @@
       </div>
       <div style="margin-top: 5px; font-size: 0.96em">Teknik Servis © 2024</div>
     </footer>
+    <script>
+      document.querySelector(".nav-toggle").onclick = function () {
+        document.querySelector(".nav-links").classList.toggle("show");
+      };
+    </script>
   </body>
 </html>
