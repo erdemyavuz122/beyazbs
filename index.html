@@ -2,42 +2,70 @@
 <html lang="tr">
   <head>
     <meta charset="UTF-8" />
-    <title>Teknik Servis | Beyaz Eşya Servisi ve Destek</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Teknik Servis | Beyaz Eşya Servisi ve Destek</title>
+    <meta
+      name="description"
+      content="Garantisi bitmiş beyaz eşyalarınız için hızlı, ekonomik ve güvenilir servis. Hemen arayın, teknik destek alın!"
+    />
+    <meta
+      name="keywords"
+      content="beyaz eşya servisi, teknik servis, buzdolabı servisi, çamaşır makinesi servisi, klima tamiri, kombi bakımı, İstanbul beyaz eşya servisi, hızlı servis"
+    />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-      rel="stylesheet"
+    <!-- Open Graph -->
+    <meta property="og:title" content="Teknik Servis | Beyaz Eşya Servisi" />
+    <meta
+      property="og:description"
+      content="Garantisi bitmiş beyaz eşyalarınız için hızlı, ekonomik ve güvenilir servis. Hemen arayın, teknik destek alın!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.siteniz.com/" />
+    <meta
+      property="og:image"
+      content="https://www.siteniz.com/social-image.png"
+    />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Teknik Servis | Beyaz Eşya Servisi" />
+    <meta
+      name="twitter:description"
+      content="Garantisi bitmiş beyaz eşyalarınız için hızlı, ekonomik ve güvenilir servis. Hemen arayın, teknik destek alın!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.siteniz.com/social-image.png"
     />
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         background: #f7faff;
         margin: 0;
-        font-family: "Segoe UI", Arial, sans-serif;
+        font-family: system-ui, Arial, sans-serif;
+        color: #20232a;
       }
-      .navbar-simple {
+      header {
         background: #2563eb;
         position: sticky;
         top: 0;
         z-index: 20;
       }
-      .navbar-inner {
+      .navbar {
         max-width: 1000px;
         margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 54px;
+        height: 52px;
         padding: 0 14px;
       }
       .nav-logo {
-        font-weight: 800;
-        font-size: 1.15em;
+        font-weight: bold;
+        font-size: 1.08em;
         color: #fff;
-        display: flex;
-        align-items: center;
-        gap: 7px;
         text-decoration: none;
       }
       .nav-links {
@@ -49,8 +77,7 @@
         text-decoration: none;
         font-weight: 700;
         font-size: 1em;
-        transition: color 0.14s;
-        padding: 2px 0;
+        transition: color 0.12s;
       }
       .nav-link:hover {
         color: #fff;
@@ -64,20 +91,18 @@
         margin-left: 8px;
       }
       @media (max-width: 620px) {
-        .navbar-inner {
+        .navbar {
           flex-direction: row;
           height: auto;
         }
         .nav-links {
           display: none;
           flex-direction: column;
-          gap: 0;
           background: #2563eb;
           width: 100vw;
           position: absolute;
           left: 0;
-          right: 0;
-          top: 54px;
+          top: 52px;
           z-index: 99;
         }
         .nav-links.show {
@@ -92,120 +117,100 @@
           display: block;
         }
       }
+      main {
+        max-width: 950px;
+        margin: auto;
+        padding: 0 10px;
+      }
       .call-btn {
         display: block;
         background: #2563eb;
         color: #fff;
         font-weight: 700;
-        border-radius: 16px;
-        font-size: 1.32em;
-        padding: 20px 0;
+        border-radius: 14px;
+        font-size: 1.18em;
+        padding: 17px 0;
         text-align: center;
-        margin: 30px 0 30px 0;
+        margin: 30px 0;
         box-shadow: 0 2px 12px #2563eb22;
-        transition: background 0.16s;
         text-decoration: none;
+        transition: background 0.14s;
       }
       .call-btn:hover {
         background: #1744a0;
-        color: #fff;
-        text-decoration: none;
       }
       .section-title {
         color: #2563eb;
         font-weight: 700;
-        font-size: 1.4em;
-        margin-top: 2.5em;
-        text-align: center;
+        font-size: 1.22em;
+        margin-top: 2.3em;
       }
       .neden-box {
         background: #fff;
-        border-radius: 14px;
+        border-radius: 12px;
         box-shadow: 0 2px 10px #2563eb16;
-        padding: 28px 20px 20px 20px;
-        margin-bottom: 22px;
-        max-width: 950px;
-        margin-left: auto;
-        margin-right: auto;
+        padding: 20px 14px;
+        margin-bottom: 20px;
       }
       .neden-list {
         display: flex;
-        gap: 28px;
+        gap: 18px;
         flex-wrap: wrap;
-        margin-top: 20px;
-        justify-content: center;
+        margin-top: 14px;
       }
       .neden-item {
         flex: 1;
-        min-width: 180px;
+        min-width: 160px;
         background: #e0e7ef;
-        padding: 18px 13px;
-        border-radius: 10px;
+        padding: 13px 10px;
+        border-radius: 8px;
         font-weight: 600;
         color: #1e293b;
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        max-width: 340px;
-      }
-      .neden-item i {
-        font-size: 1.35em;
-        color: #2563eb;
+        margin-bottom: 8px;
       }
       .populer-hizmetler {
         display: flex;
-        gap: 14px;
+        gap: 12px;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 18px 0 30px 0;
+        margin: 17px 0 25px 0;
       }
       .populer-box {
         flex: 1;
-        min-width: 150px;
+        min-width: 130px;
         max-width: 200px;
         background: #fff;
         color: #2563eb;
-        border-radius: 13px;
-        padding: 18px 8px;
-        margin-bottom: 10px;
+        border-radius: 10px;
+        padding: 15px 6px;
+        margin-bottom: 8px;
         box-shadow: 0 2px 10px #2563eb12;
         font-weight: 600;
         cursor: pointer;
         text-align: center;
-        border: 1.5px solid #e0e7ef;
-        transition: box-shadow 0.13s, border 0.14s, transform 0.11s;
+        border: 1.2px solid #e0e7ef;
         font-size: 1em;
-        text-decoration: none;
-        display: block;
-      }
-      .populer-box .icon {
-        color: #2563eb;
-        margin-bottom: 7px;
+        transition: box-shadow 0.13s, border 0.13s, transform 0.1s;
       }
       .populer-box:hover {
         box-shadow: 0 5px 18px #2563eb21;
-        border: 1.5px solid #2563eb;
-        transform: scale(1.05);
+        border: 1.2px solid #2563eb;
         background: #f3f7fd;
         color: #1744a0;
         text-decoration: none;
+        transform: scale(1.04);
       }
       @media (max-width: 700px) {
+        .neden-list,
         .populer-hizmetler {
           flex-direction: column;
-          gap: 9px;
+          gap: 11px;
+        }
+        .neden-box {
+          padding: 1em 0.7em;
         }
         .populer-box {
-          max-width: 99vw;
-        }
-        .neden-list {
-          flex-direction: column;
-          gap: 15px;
-        }
-        .neden-box,
-        .makale-box {
-          padding: 2rem 1.5rem;
+          max-width: 100vw;
         }
       }
       .yorumlar {
@@ -218,14 +223,14 @@
         background: #e0e7ef;
         margin-bottom: 0.7em;
         padding: 0.7em 1em;
-        border-radius: 9px;
+        border-radius: 7px;
       }
       .makale-box {
         background: #fff;
-        border-radius: 16px;
+        border-radius: 11px;
         box-shadow: 0 2px 14px #2563eb13;
-        padding: 2rem 1.2rem;
-        margin: 48px 0 50px 0;
+        padding: 1.1em 0.8em;
+        margin: 40px 0 32px 0;
         max-width: 900px;
         margin-left: auto;
         margin-right: auto;
@@ -236,88 +241,70 @@
       }
       .mini-uyari {
         color: #f59e42;
-        font-size: 0.98em;
-        margin-top: 16px;
+        font-size: 0.97em;
+        margin-top: 13px;
         text-align: center;
       }
       footer {
         background: #1e293b;
         color: #fff;
-        padding: 22px 0 16px 0;
+        padding: 18px 0 12px 0;
         text-align: center;
+        font-size: 1em;
+        margin-top: 34px;
       }
       footer a {
         color: #dbeafe;
         text-decoration: none;
-        margin: 0 9px;
+        margin: 0 8px;
       }
     </style>
     <script src="config.js"></script>
   </head>
   <body>
-    <!-- Navbar -->
     <header>
-      <nav class="navbar-simple">
-        <div class="navbar-inner">
-          <a href="index.html" class="nav-logo" id="headerSiteName"
-            >Teknik Servis</a
-          >
-          <button class="nav-toggle" aria-label="Menüyü Aç/Kapat">
-            &#9776;
-          </button>
-          <div class="nav-links">
-            <a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a>
-            <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
-            <a class="nav-link" href="iletisim.html">İletişim</a>
-          </div>
+      <nav class="navbar">
+        <a href="index.html" class="nav-logo" id="headerSiteName"
+          >Teknik Servis</a
+        >
+        <button class="nav-toggle" aria-label="Menüyü Aç/Kapat">&#9776;</button>
+        <div class="nav-links">
+          <a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a>
+          <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+          <a class="nav-link" href="iletisim.html">İletişim</a>
         </div>
       </nav>
     </header>
-
-    <main style="max-width: 950px; margin: auto">
-      <!-- Call to Action -->
+    <main>
       <a class="call-btn" id="callBtn" href="tel:05555555555">
-        <i class="bi bi-telephone-fill"></i>
-        <span id="callPhone">0555 555 5555</span> &nbsp;|&nbsp; Hemen Ara &
-        Bilgi Al
+        0555 555 5555 &nbsp;|&nbsp; Hemen Ara & Bilgi Al
       </a>
-
       <!-- Neden Bizi Tercih Etmelisiniz -->
       <div class="neden-box">
         <div class="section-title">Neden Bizi Tercih Etmelisiniz?</div>
         <div class="neden-list">
+          <div class="neden-item">Güvenilir, tecrübeli ve profesyonel ekip</div>
           <div class="neden-item">
-            <i class="bi bi-shield-check"></i>
-            <span>Güvenilir, tecrübeli ve profesyonel ekip</span>
+            Aynı gün hızlı servis ve net fiyatlandırma
           </div>
           <div class="neden-item">
-            <i class="bi bi-lightning-charge"></i>
-            <span>Aynı gün hızlı servis ve net fiyatlandırma</span>
-          </div>
-          <div class="neden-item">
-            <i class="bi bi-award"></i>
-            <span>Orijinal yedek parça, uzun vadeli çözüm garantisi</span>
+            Orijinal yedek parça, uzun vadeli çözüm garantisi
           </div>
         </div>
       </div>
-
       <!-- Popüler Hizmetlerimiz -->
       <div class="section-title">Popüler Hizmetlerimiz</div>
       <div class="populer-hizmetler">
-        <a class="populer-box" href="hizmet.html?service=Buzdolabı">
-          <i class="bi bi-snow icon" style="font-size: 1.6em"></i><br />
-          Buzdolabı Servisi
-        </a>
-        <a class="populer-box" href="hizmet.html?service=Çamaşır+Makinesi">
-          <i class="bi bi-droplet-half icon" style="font-size: 1.6em"></i><br />
-          Çamaşır Makinesi
-        </a>
-        <a class="populer-box" href="hizmet.html?service=Klima">
-          <i class="bi bi-wind icon" style="font-size: 1.6em"></i><br />
-          Klima Bakım & Onarım
-        </a>
+        <a class="populer-box" href="hizmet.html?service=Buzdolabı%20Servisi"
+          >Buzdolabı Servisi</a
+        >
+        <a class="populer-box" href="hizmet.html?service=Çamaşır%20Makinesi"
+          >Çamaşır Makinesi</a
+        >
+        <a class="populer-box" href="hizmet.html?service=Klima"
+          >Klima Bakım & Onarım</a
+        >
       </div>
-
       <!-- Müşteri Yorumları -->
       <div class="section-title">Müşteri Yorumları</div>
       <div class="yorumlar">
@@ -373,7 +360,6 @@
           ederim.
         </div>
       </div>
-
       <!-- Makale (Kısa örnek) -->
       <div className="makale-box">
         <h1>
@@ -619,15 +605,12 @@
           önler hem de güvenli, sürdürülebilir bir kullanım sunar.
         </p>
       </div>
-
       <div class="mini-uyari">
         Bu hizmet yalnızca garantisi sona ermiş cihazlar içindir.
         <b>Yetkili servis değiliz.</b>
       </div>
     </main>
-    <!-- Footer -->
     <footer>
-      <div id="footerCompany"></div>
       <div>
         <a href="index.html">Ana Sayfa</a> |
         <a href="hizmetlerimiz.html">Hizmetlerimiz</a> |
@@ -637,23 +620,15 @@
         <a href="kvkk.html">KVKK</a>
       </div>
       <div style="margin-top: 5px; font-size: 0.96em">
-        &copy; <span id="footerYear"></span> <span id="footerSiteName"></span>
+        &copy; <span id="footerYear"></span> Teknik Servis
       </div>
     </footer>
     <script>
-      // Hamburger toggle (mobil menü)
       document.querySelector(".nav-toggle").onclick = function () {
         document.querySelector(".nav-links").classList.toggle("show");
       };
-      // config.js'den bilgileri doldur
       document.addEventListener("DOMContentLoaded", function () {
-        if (window.SITE_CONFIG) {
-          var cfg = window.SITE_CONFIG;
-          document.getElementById("headerSiteName").innerText = cfg.siteName;
-          document.getElementById("footerSiteName").innerText = cfg.siteName;
-          document.getElementById("callPhone").innerText = cfg.phone;
-        }
-        document.getElementById("footerYear").innerText =
+        document.getElementById("footerYear").textContent =
           new Date().getFullYear();
       });
     </script>
