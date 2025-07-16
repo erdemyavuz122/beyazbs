@@ -12,6 +12,10 @@
         background: #f7faff;
         font-family: "Segoe UI", Arial, sans-serif;
       }
+      header {
+        background: #2563eb;
+        padding: 1em 0 0.9em 0;
+      }
       .navbar-simple {
         background: #2563eb;
         position: sticky;
@@ -88,7 +92,6 @@
           display: block;
         }
       }
-
       main {
         max-width: 440px;
         margin: 0 auto;
@@ -114,20 +117,41 @@
         color: #1744a0;
         font-weight: 500;
       }
-      .call-btn {
+      .ara-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
         background: #2563eb;
         color: #fff;
-        font-weight: 600;
-        border-radius: 13px;
-        display: block;
+        font-weight: 700;
+        border-radius: 28px;
+        font-size: 1.08em;
+        padding: 11px 28px 11px 16px;
+        box-shadow: 0 3px 18px #2563eb18;
+        margin: 30px auto 22px auto;
+        width: fit-content;
+        min-width: 145px;
+        max-width: 90vw;
         text-align: center;
-        font-size: 1.12em;
-        padding: 13px 0;
         text-decoration: none;
-        margin-top: 1.4em;
+        transition: background 0.17s, transform 0.11s, box-shadow 0.16s;
+        cursor: pointer;
+        letter-spacing: 0.02em;
+        border: none;
+        outline: none;
       }
-      .call-btn:hover {
-        background: #133eb3;
+      .ara-btn:hover,
+      .ara-btn:focus {
+        background: #1744a0;
+        color: #ffe44b;
+        transform: scale(1.04);
+        box-shadow: 0 6px 28px #2563eb31;
+        text-decoration: none;
+      }
+      .ara-btn:active {
+        background: #133179;
+        color: #fffbe7;
       }
       /* Form Stilleri */
       form {
@@ -232,7 +256,7 @@
     <header>
       <nav class="navbar-simple">
         <div class="navbar-inner">
-          <a href="index.html" class="nav-logo">Ana Sayfa</a>
+          <a href="index.html" class="nav-logo">Teknik Servis</a>
           <button class="nav-toggle" aria-label="Menüyü Aç/Kapat">
             &#9776;
           </button>
@@ -250,17 +274,17 @@
       <div class="contact-box">
         <div class="contact-row">
           <span class="contact-label">Telefon:</span>
-          <span id="contactPhone"></span>
+          <span id="contactPhone">0555 555 5555</span>
         </div>
         <div class="contact-row">
           <span class="contact-label">E-posta:</span>
-          <span id="contactMail"></span>
+          <span id="contactEmail">teknikservis@ornekmail.com</span>
         </div>
         <div class="contact-row">
           <span class="contact-label">Adres:</span>
-          <span id="contactAddress"></span>
+          <span id="contactAddress">Mahalle Cad. No: 5, İstanbul</span>
         </div>
-        <a id="callBtn" href="#" class="call-btn">📞 Hemen Ara & Destek Al</a>
+        <a id="callBtn" href="#" class="ara-btn">📞 Hemen Ara</a>
         <!-- İletişim Formu -->
         <form id="contactForm" autocomplete="off">
           <div class="form-row">
@@ -304,31 +328,29 @@
         Bu hizmet yalnızca garantisi sona ermiş cihazlar içindir.
         <b>Yetkili servis değiliz.</b>
       </div>
-      <div style="margin-top: 5px; font-size: 0.96em">
-        &copy; <span id="footerYear"></span> <span id="footerSiteName"></span>
-      </div>
+      <div style="margin-top: 5px; font-size: 0.96em">Teknik Servis © 2024</div>
     </footer>
     <script>
-      // Hamburger menü (mobil)
+      // Hamburger menü aç/kapat
       document.querySelector(".nav-toggle").onclick = function () {
         document.querySelector(".nav-links").classList.toggle("show");
       };
-      // config.js'den site verileri
+      // config.js'den şirket bilgilerini çek ve yerleştir
       document.addEventListener("DOMContentLoaded", function () {
-        if (window.SITE_CONFIG) {
-          var cfg = window.SITE_CONFIG;
-          document.getElementById("headerSiteName").innerText = cfg.siteName;
-          document.getElementById("footerSiteName").innerText = cfg.siteName;
-          document.getElementById("footerYear").innerText =
-            new Date().getFullYear();
+        var cfg = window.SITE_CONFIG;
+        if (cfg && cfg.phone) {
           document.getElementById("contactPhone").innerText = cfg.phone;
-          document.getElementById("contactMail").innerText = cfg.email;
-          document.getElementById("contactAddress").innerText = cfg.address;
           document.getElementById("callBtn").href =
             "tel:" + cfg.phone.replace(/\D/g, "");
         }
+        if (cfg && cfg.email) {
+          document.getElementById("contactEmail").innerText = cfg.email;
+        }
+        if (cfg && cfg.address) {
+          document.getElementById("contactAddress").innerText = cfg.address;
+        }
       });
-      // Form işlemi
+      // Form işleyici
       document
         .getElementById("contactForm")
         .addEventListener("submit", function (e) {

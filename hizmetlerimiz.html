@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <style>
       body {
@@ -94,6 +95,7 @@
           display: block;
         }
       }
+
       h1.section-title {
         color: #2563eb;
         font-size: 1.55em;
@@ -161,57 +163,45 @@
           margin-top: 1.3em;
         }
       }
-      .call-btn-fixed {
-        position: fixed;
-        left: 50%;
-        bottom: 24px;
-        transform: translateX(-50%);
+      /* ---- Hemen Ara Butonu ---- */
+      .ara-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
         background: #2563eb;
         color: #fff;
         font-weight: 700;
-        border-radius: 36px;
-        font-size: 1.15em;
-        padding: 11px 30px;
-        box-shadow: 0 4px 18px #2563eb22;
+        border-radius: 28px;
+        font-size: 1.1em;
+        padding: 11px 34px 11px 19px;
+        box-shadow: 0 3px 18px #2563eb18;
+        margin: 32px auto 10px auto;
+        width: fit-content;
+        min-width: 158px;
+        max-width: 88vw;
         text-align: center;
         text-decoration: none;
-        z-index: 120;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        min-width: 275px;
-        max-width: 97vw;
-      }
-      .call-btn-fixed .icon {
-        font-size: 1.25em;
-      }
-      .call-btn-fixed .call-sep {
-        margin: 0 10px 0 8px;
-        font-weight: 400;
-        font-size: 1.25em;
-        color: #c7e0ff;
-      }
-      .call-btn-fixed .call-text {
-        font-size: 1em;
-        font-weight: 600;
+        transition: background 0.17s, transform 0.11s, box-shadow 0.16s;
+        cursor: pointer;
         letter-spacing: 0.02em;
+        position: relative;
+        border: none;
+        outline: none;
       }
-      .call-btn-fixed:hover {
+      .ara-btn:hover,
+      .ara-btn:focus {
         background: #1744a0;
-        color: #fff;
-        box-shadow: 0 6px 32px #2563eb36;
+        color: #ffe44b;
+        transform: scale(1.04);
+        box-shadow: 0 6px 28px #2563eb31;
+        text-decoration: none;
       }
-      @media (max-width: 500px) {
-        .call-btn-fixed {
-          padding: 10px 6vw;
-          min-width: 0;
-          font-size: 1em;
-        }
-        .call-btn-fixed .call-sep {
-          margin: 0 5px;
-        }
+      .ara-btn:active {
+        background: #133179;
+        color: #fffbe7;
       }
-
+      /* -------------------------------- */
       .yorumlar-section {
         max-width: 600px;
         margin: 36px auto 0 auto;
@@ -256,6 +246,7 @@
         margin-top: 7px;
       }
     </style>
+    <script src="config.js"></script>
   </head>
   <body>
     <header>
@@ -273,6 +264,7 @@
         </div>
       </nav>
     </header>
+
     <main>
       <h1 class="section-title">Hizmetlerimiz</h1>
       <div class="desc">
@@ -284,37 +276,42 @@
           class="hizmet-kutu"
           href="hizmet.html?service=Beyaz%20Eşya%20Servisi"
         >
-          <span class="emoji">🧊</span> Beyaz Eşya Servisi
+          <span class="emoji">🧊</span>
+          Beyaz Eşya Servisi
         </a>
         <a class="hizmet-kutu" href="hizmet.html?service=Buzdolabı%20Servisi">
-          <span class="emoji">❄️</span> Buzdolabı
+          <span class="emoji">❄️</span>
+          Buzdolabı
         </a>
         <a class="hizmet-kutu" href="hizmet.html?service=Çamaşır%20Makinesi">
-          <span class="emoji">🧺</span> Çamaşır Makinesi
+          <span class="emoji">🧺</span>
+          Çamaşır Makinesi
         </a>
         <a class="hizmet-kutu" href="hizmet.html?service=Bulaşık%20Makinesi">
-          <span class="emoji">🍽️</span> Bulaşık Makinesi
+          <span class="emoji">🍽️</span>
+          Bulaşık Makinesi
         </a>
         <a class="hizmet-kutu" href="hizmet.html?service=Fırın">
-          <span class="emoji">🔥</span> Fırın
+          <span class="emoji">🔥</span>
+          Fırın
         </a>
         <a class="hizmet-kutu" href="hizmet.html?service=Klima">
-          <span class="emoji">🌬️</span> Klima
+          <span class="emoji">🌬️</span>
+          Klima
         </a>
         <a class="hizmet-kutu" href="hizmet.html?service=Kombi">
-          <span class="emoji">💧</span> Kombi
+          <span class="emoji">💧</span>
+          Kombi
         </a>
         <a class="hizmet-kutu" href="hizmet.html?service=Televizyon">
-          <span class="emoji">📺</span> Televizyon
+          <span class="emoji">📺</span>
+          Televizyon
         </a>
       </div>
-      <!-- Hemen Ara Butonu Ortada ve Sabit -->
-      <a class="call-btn-fixed" id="callBtn" href="#">
-        <span class="icon">📞</span>
-        <span id="callPhone"></span>
-        <span class="call-sep">|</span>
-        <span class="call-text">Hemen Ara</span>
-      </a>
+      <!-- Hemen Ara Butonu -->
+      <div style="display: flex; justify-content: center">
+        <a id="callBtn" href="#" class="ara-btn">📞 Hemen Ara</a>
+      </div>
       <section class="yorumlar-section">
         <div class="yorumlar-title">Müşteri Yorumları</div>
         <div class="yorum">
@@ -367,15 +364,17 @@
       </div>
       <div style="margin-top: 5px; font-size: 0.96em">Teknik Servis © 2024</div>
     </footer>
-    <!-- Telefon numarası config.js'den gelsin -->
     <script src="config.js"></script>
     <script>
+      // Telefon numarasını config.js'den al ve butona ata
       document.addEventListener("DOMContentLoaded", function () {
         var cfg = window.SITE_CONFIG;
-        document.getElementById("callBtn").href =
-          "tel:" + cfg.phone.replace(/\D/g, "");
-        document.getElementById("callPhone").textContent = cfg.phone;
+        var btn = document.getElementById("callBtn");
+        if (btn && cfg && cfg.phone) {
+          btn.href = "tel:" + cfg.phone.replace(/\D/g, "");
+        }
       });
+      // Menü aç/kapat
       document.querySelector(".nav-toggle").onclick = function () {
         document.querySelector(".nav-links").classList.toggle("show");
       };

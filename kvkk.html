@@ -7,14 +7,22 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <style>
+      html,
       body {
+        height: 100%;
         margin: 0;
+        padding: 0;
+      }
+      body {
         background: #f7faff;
         font-family: "Segoe UI", Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
       }
       header {
         background: #2563eb;
-        padding: 1em 0 0.9em 0;
+        padding: 0;
       }
       .navbar-simple {
         background: #2563eb;
@@ -53,7 +61,7 @@
         padding: 2px 0;
       }
       .nav-link:hover {
-        color: #fff;
+        color: #ffe44b;
       }
       .nav-toggle {
         display: none;
@@ -97,6 +105,8 @@
         max-width: 670px;
         margin: 0 auto;
         padding: 28px 12px 0 12px;
+        flex: 1;
+        /* İçeriğin alanını esnet */
       }
       .title {
         color: #2563eb;
@@ -117,19 +127,40 @@
       .kvkk-box ul {
         margin-left: 1.1em;
       }
+      /* Footer style */
       footer {
         background: #1e293b;
         color: #fff;
         padding: 22px 0 14px 0;
         text-align: center;
         font-size: 1em;
-        margin-top: 32px;
+        width: 100%;
       }
-      footer a {
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0 9px;
+        font-size: 1.08em;
+        margin-bottom: 7px;
+      }
+      .footer-links a {
         color: #dbeafe;
         text-decoration: none;
-        margin: 0 9px;
+        margin: 0;
         font-size: 0.97em;
+        font-weight: 500;
+      }
+      .footer-links span {
+        color: #dbeafe;
+        font-weight: 400;
+        font-size: 1.08em;
+        user-select: none;
+        margin: 0 2px;
+      }
+      .footer-links a:hover {
+        color: #ffe44b;
       }
       .footer-mini {
         font-size: 0.93em;
@@ -143,17 +174,30 @@
         .kvkk-box {
           padding: 1em 5px;
         }
+        .footer-links {
+          flex-wrap: wrap;
+          font-size: 1em;
+        }
+        .footer-links a,
+        .footer-links span {
+          font-size: 1em;
+        }
       }
     </style>
   </head>
   <body>
     <header>
-      <nav class="navbar">
-        <a href="index.html" class="navbar-title">Ana Sayfa</a>
-        <div class="navbar-links">
-          <a href="hizmetlerimiz.html" id="menu-hizmetlerimiz">Hizmetlerimiz</a>
-          <a href="hakkimizda.html" id="menu-hakkimizda">Hakkımızda</a>
-          <a href="iletisim.html" id="menu-iletisim">İletişim</a>
+      <nav class="navbar-simple">
+        <div class="navbar-inner">
+          <a href="index.html" class="nav-logo">Teknik Servis</a>
+          <button class="nav-toggle" aria-label="Menüyü Aç/Kapat">
+            &#9776;
+          </button>
+          <div class="nav-links">
+            <a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a>
+            <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+            <a class="nav-link" href="iletisim.html">İletişim</a>
+          </div>
         </div>
       </nav>
     </header>
@@ -176,12 +220,17 @@
       </div>
     </main>
     <footer>
-      <div>
-        <a href="index.html">Ana Sayfa</a> |
-        <a href="hizmetlerimiz.html">Hizmetlerimiz</a> |
-        <a href="hakkimizda.html">Hakkımızda</a> |
-        <a href="iletisim.html">İletişim</a> |
-        <a href="gizlilik.html">Gizlilik Politikası</a> |
+      <div class="footer-links">
+        <a href="index.html">Ana Sayfa</a>
+        <span>|</span>
+        <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
+        <span>|</span>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <span>|</span>
+        <a href="iletisim.html">İletişim</a>
+        <span>|</span>
+        <a href="gizlilik.html">Gizlilik Politikası</a>
+        <span>|</span>
         <a href="kvkk.html">KVKK</a>
       </div>
       <div class="footer-mini">
