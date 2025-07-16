@@ -38,6 +38,7 @@
         display: flex;
         align-items: center;
         gap: 7px;
+        text-decoration: none;
       }
       .nav-links {
         display: flex;
@@ -115,6 +116,7 @@
         font-weight: 700;
         font-size: 1.4em;
         margin-top: 2.5em;
+        text-align: center;
       }
       .neden-box {
         background: #fff;
@@ -131,6 +133,7 @@
         gap: 28px;
         flex-wrap: wrap;
         margin-top: 20px;
+        justify-content: center;
       }
       .neden-item {
         flex: 1;
@@ -144,6 +147,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
+        max-width: 340px;
       }
       .neden-item i {
         font-size: 1.35em;
@@ -158,12 +162,12 @@
       }
       .populer-box {
         flex: 1;
-        min-width: 150px; /* küçüldü */
-        max-width: 200px; /* küçüldü */
-        background: #fff; /* Beyaz kutu */
-        color: #2563eb; /* Yazılar mavi */
+        min-width: 150px;
+        max-width: 200px;
+        background: #fff;
+        color: #2563eb;
         border-radius: 13px;
-        padding: 18px 8px; /* daha az padding */
+        padding: 18px 8px;
         margin-bottom: 10px;
         box-shadow: 0 2px 10px #2563eb12;
         font-weight: 600;
@@ -172,6 +176,8 @@
         border: 1.5px solid #e0e7ef;
         transition: box-shadow 0.13s, border 0.14s, transform 0.11s;
         font-size: 1em;
+        text-decoration: none;
+        display: block;
       }
       .populer-box .icon {
         color: #2563eb;
@@ -192,6 +198,14 @@
         }
         .populer-box {
           max-width: 99vw;
+        }
+        .neden-list {
+          flex-direction: column;
+          gap: 15px;
+        }
+        .neden-box,
+        .makale-box {
+          padding: 1.2rem 0.7rem;
         }
       }
       .yorumlar {
@@ -224,39 +238,30 @@
         color: #f59e42;
         font-size: 0.98em;
         margin-top: 16px;
+        text-align: center;
       }
       footer {
         background: #1e293b;
         color: #fff;
         padding: 22px 0 16px 0;
+        text-align: center;
       }
       footer a {
         color: #dbeafe;
         text-decoration: none;
         margin: 0 9px;
       }
-      @media (max-width: 700px) {
-        .neden-list {
-          flex-direction: column;
-          gap: 15px;
-        }
-        .populer-hizmetler {
-          flex-direction: column;
-          gap: 12px;
-        }
-        .neden-box,
-        .makale-box {
-          padding: 1.2rem 0.7rem;
-        }
-      }
     </style>
+    <script src="config.js"></script>
   </head>
   <body>
     <!-- Navbar -->
     <header>
       <nav class="navbar-simple">
         <div class="navbar-inner">
-          <a href="index.html" class="nav-logo">Teknik Servis</a>
+          <a href="index.html" class="nav-logo" id="headerSiteName"
+            >Teknik Servis</a
+          >
           <button class="nav-toggle" aria-label="Menüyü Aç/Kapat">
             &#9776;
           </button>
@@ -271,9 +276,10 @@
 
     <main style="max-width: 950px; margin: auto">
       <!-- Call to Action -->
-      <a class="call-btn" href="tel:05555555555">
-        <i class="bi bi-telephone-fill"></i> 0555 555 5555 &nbsp;|&nbsp; Hemen
-        Ara & Bilgi Al
+      <a class="call-btn" id="callBtn" href="tel:05555555555">
+        <i class="bi bi-telephone-fill"></i>
+        <span id="callPhone">0555 555 5555</span> &nbsp;|&nbsp; Hemen Ara &
+        Bilgi Al
       </a>
 
       <!-- Neden Bizi Tercih Etmelisiniz -->
@@ -298,11 +304,11 @@
       <!-- Popüler Hizmetlerimiz -->
       <div class="section-title">Popüler Hizmetlerimiz</div>
       <div class="populer-hizmetler">
-        <a class="populer-box" href="hizmet.html?service=Buzdolabı%20Servisi">
+        <a class="populer-box" href="hizmet.html?service=Buzdolabı">
           <i class="bi bi-snow icon" style="font-size: 1.6em"></i><br />
           Buzdolabı Servisi
         </a>
-        <a class="populer-box" href="hizmet.html?service=Çamaşır%20Makinesi">
+        <a class="populer-box" href="hizmet.html?service=Çamaşır+Makinesi">
           <i class="bi bi-droplet-half icon" style="font-size: 1.6em"></i><br />
           Çamaşır Makinesi
         </a>
@@ -377,36 +383,49 @@
         <p>
           Günümüzde teknolojinin sunduğu imkanlar, günlük yaşamı büyük oranda
           kolaylaştırmakta ve konfor seviyesini artırmaktadır...
-          <!-- (Devamı için ilgili sayfaya yönlendirme koyabilirsin veya daha fazla paragraf ekleyebilirsin) -->
         </p>
       </div>
 
-      <div class="mini-uyari" style="text-align: center">
+      <div class="mini-uyari">
         Bu hizmet yalnızca garantisi sona ermiş cihazlar içindir.
         <b>Yetkili servis değiliz.</b>
       </div>
     </main>
     <!-- Footer -->
-    <footer class="mt-4">
+    <footer>
       <div id="footerCompany"></div>
-      <div id="footerPhone"></div>
-      <div class="container text-center">
-        <div>
-          <a href="index.html">Ana Sayfa</a> |
-          <a href="hizmetlerimiz.html">Hizmetlerimiz</a> |
-          <a href="hakkimizda.html">Hakkımızda</a> |
-          <a href="iletisim.html">İletişim</a> |
-          <a href="gizlilik.html">Gizlilik Politikası</a> |
-          <a href="kvkk.html">KVKK</a>
-        </div>
-        <div class="mt-2" style="font-size: 0.95em">Teknik Servis © 2024</div>
+      <div>
+        <a href="index.html">Ana Sayfa</a> |
+        <a href="hizmetlerimiz.html">Hizmetlerimiz</a> |
+        <a href="hakkimizda.html">Hakkımızda</a> |
+        <a href="iletisim.html">İletişim</a> |
+        <a href="gizlilik.html">Gizlilik Politikası</a> |
+        <a href="kvkk.html">KVKK</a>
+      </div>
+      <div style="margin-top: 5px; font-size: 0.96em">
+        &copy; <span id="footerYear"></span> <span id="footerSiteName"></span>
       </div>
     </footer>
     <script>
-      // Hamburger toggle için
+      // Hamburger toggle (mobil menü)
       document.querySelector(".nav-toggle").onclick = function () {
         document.querySelector(".nav-links").classList.toggle("show");
       };
+      // config.js'den bilgileri doldur
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.SITE_CONFIG) {
+          var cfg = window.SITE_CONFIG;
+          document.getElementById("headerSiteName").innerText = cfg.siteName;
+          document.getElementById("footerSiteName").innerText = cfg.siteName;
+          document.getElementById("footerCompany").innerText =
+            cfg.siteName + " - " + cfg.address + " - Tel: " + cfg.phone;
+          document.getElementById("callBtn").href =
+            "tel:" + cfg.phone.replace(/\D/g, "");
+          document.getElementById("callPhone").innerText = cfg.phone;
+        }
+        document.getElementById("footerYear").innerText =
+          new Date().getFullYear();
+      });
     </script>
   </body>
 </html>

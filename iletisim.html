@@ -12,10 +12,6 @@
         background: #f7faff;
         font-family: "Segoe UI", Arial, sans-serif;
       }
-      header {
-        background: #2563eb;
-        padding: 1em 0 0.9em 0;
-      }
       .navbar-simple {
         background: #2563eb;
         position: sticky;
@@ -230,12 +226,15 @@
         }
       }
     </style>
+    <script src="config.js"></script>
   </head>
   <body>
     <header>
       <nav class="navbar-simple">
         <div class="navbar-inner">
-          <a href="index.html" class="nav-logo">Teknik Servis</a>
+          <a href="index.html" class="nav-logo" id="headerSiteName"
+            >Teknik Servis</a
+          >
           <button class="nav-toggle" aria-label="Menüyü Aç/Kapat">
             &#9776;
           </button>
@@ -252,15 +251,18 @@
       <div class="title">İletişim Bilgileri</div>
       <div class="contact-box">
         <div class="contact-row">
-          <span class="contact-label">Telefon:</span> 0555 555 5555
+          <span class="contact-label">Telefon:</span>
+          <span id="contactPhone"></span>
         </div>
         <div class="contact-row">
-          <span class="contact-label">E-posta:</span> teknikservis@ornekmail.com
+          <span class="contact-label">E-posta:</span>
+          <span id="contactMail"></span>
         </div>
         <div class="contact-row">
-          <span class="contact-label">Adres:</span> Mahalle Cad. No: 5, İstanbul
+          <span class="contact-label">Adres:</span>
+          <span id="contactAddress"></span>
         </div>
-        <a href="tel:05555555555" class="call-btn">📞 Hemen Ara & Destek Al</a>
+        <a id="callBtn" href="#" class="call-btn">📞 Hemen Ara & Destek Al</a>
         <!-- İletişim Formu -->
         <form id="contactForm" autocomplete="off">
           <div class="form-row">
@@ -304,14 +306,35 @@
         Bu hizmet yalnızca garantisi sona ermiş cihazlar içindir.
         <b>Yetkili servis değiliz.</b>
       </div>
-      <div style="margin-top: 5px; font-size: 0.96em">Teknik Servis © 2024</div>
+      <div style="margin-top: 5px; font-size: 0.96em">
+        &copy; <span id="footerYear"></span> <span id="footerSiteName"></span>
+      </div>
     </footer>
     <script>
+      // Hamburger menü (mobil)
+      document.querySelector(".nav-toggle").onclick = function () {
+        document.querySelector(".nav-links").classList.toggle("show");
+      };
+      // config.js'den site verileri
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.SITE_CONFIG) {
+          var cfg = window.SITE_CONFIG;
+          document.getElementById("headerSiteName").innerText = cfg.siteName;
+          document.getElementById("footerSiteName").innerText = cfg.siteName;
+          document.getElementById("footerYear").innerText =
+            new Date().getFullYear();
+          document.getElementById("contactPhone").innerText = cfg.phone;
+          document.getElementById("contactMail").innerText = cfg.email;
+          document.getElementById("contactAddress").innerText = cfg.address;
+          document.getElementById("callBtn").href =
+            "tel:" + cfg.phone.replace(/\D/g, "");
+        }
+      });
+      // Form işlemi
       document
         .getElementById("contactForm")
         .addEventListener("submit", function (e) {
           e.preventDefault();
-          // Basit ön kontrol
           var name = document.getElementById("name").value.trim();
           var email = document.getElementById("email").value.trim();
           var msg = document.getElementById("message").value.trim();
@@ -321,16 +344,10 @@
               '<div class="form-error">Tüm alanları doldurun.</div>';
             return;
           }
-          // Mailto veya API ile gönderme için burayı değiştirebilirsin
           formMsg.innerHTML =
             '<div class="form-success">Mesajınız başarıyla gönderildi! En kısa sürede dönüş yapılacaktır.</div>';
           document.getElementById("contactForm").reset();
         });
     </script>
   </body>
-  <script>
-    document.querySelector(".nav-toggle").onclick = function () {
-      document.querySelector(".nav-links").classList.toggle("show");
-    };
-  </script>
 </html>
