@@ -651,10 +651,6 @@
           var cfg = window.SITE_CONFIG;
           document.getElementById("headerSiteName").innerText = cfg.siteName;
           document.getElementById("footerSiteName").innerText = cfg.siteName;
-          document.getElementById("footerCompany").innerText =
-            cfg.siteName + " - " + cfg.address + " - Tel: " + cfg.phone;
-          document.getElementById("callBtn").href =
-            "tel:" + cfg.phone.replace(/\D/g, "");
           document.getElementById("callPhone").innerText = cfg.phone;
         }
         document.getElementById("footerYear").innerText =
