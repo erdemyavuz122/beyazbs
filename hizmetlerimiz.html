@@ -310,7 +310,7 @@
       </div>
       <!-- Hemen Ara Butonu -->
       <div style="display: flex; justify-content: center">
-        <a id="callBtn" href="#" class="ara-btn">📞 Hemen Ara</a>
+        <a id="callBtn" href="tel: 05555555555" class="ara-btn">📞 Hemen Ara</a>
       </div>
       <section class="yorumlar-section">
         <div class="yorumlar-title">Müşteri Yorumları</div>
@@ -366,14 +366,6 @@
     </footer>
     <script src="config.js"></script>
     <script>
-      // Telefon numarasını config.js'den al ve butona ata
-      document.addEventListener("DOMContentLoaded", function () {
-        var cfg = window.SITE_CONFIG;
-        var btn = document.getElementById("callBtn");
-        if (btn && cfg && cfg.phone) {
-          btn.href = "tel:" + cfg.phone.replace(/\D/g, "");
-        }
-      });
       // Menü aç/kapat
       document.querySelector(".nav-toggle").onclick = function () {
         document.querySelector(".nav-links").classList.toggle("show");
