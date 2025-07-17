@@ -170,36 +170,30 @@
       }
       .populer-hizmetler {
         display: flex;
+        flex-direction: column;
         gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 17px 0 25px 0;
+        margin: 20px 0 30px 0;
       }
-      .populer-box {
-        flex: 1;
-        min-width: 130px;
-        max-width: 200px;
+      .populer-btn {
         background: #fff;
+        border: 1.5px solid #2563eb33;
+        border-radius: 30px;
         color: #2563eb;
-        border-radius: 10px;
-        padding: 15px 6px;
-        margin-bottom: 8px;
-        box-shadow: 0 2px 10px #2563eb12;
-        font-weight: 600;
-        cursor: pointer;
-        text-align: center;
-        border: 1.2px solid #e0e7ef;
-        font-size: 1em;
-        transition: box-shadow 0.13s, border 0.13s, transform 0.1s;
-      }
-      .populer-box:hover {
-        box-shadow: 0 5px 18px #2563eb21;
-        border: 1.2px solid #2563eb;
-        background: #f3f7fd;
-        color: #1744a0;
+        font-weight: 700;
+        font-size: 1.08em;
+        padding: 15px 0;
+        box-shadow: 0 2px 8px #2563eb13;
+        transition: background 0.13s, color 0.13s, border 0.13s;
         text-decoration: none;
-        transform: scale(1.04);
+        text-align: center;
+        display: block;
       }
+      .populer-btn:hover {
+        background: #2563eb;
+        color: #fff;
+        border: 1.5px solid #2563eb;
+      }
+
       @media (max-width: 700px) {
         .neden-list,
         .populer-hizmetler {
@@ -274,33 +268,104 @@
       </nav>
     </header>
     <main>
+      <div
+        class="tanitim-kisa"
+        style="
+          text-align: center;
+          font-weight: 500;
+          margin-top: 30px;
+          margin-bottom: 10px;
+          font-size: 1.09em;
+        "
+      >
+        Beyaz eşya, klima ve kombi arızalarında hızlı çözüm – Profesyonel teknik
+        destek bir telefon uzağınızda!
+      </div>
       <a class="call-btn" id="callBtn" href="tel:05555555555">
         0555 555 5555 &nbsp;|&nbsp; Hemen Ara & Bilgi Al
       </a>
       <!-- Neden Bizi Tercih Etmelisiniz -->
       <div class="neden-box">
-        <div class="section-title">Neden Bizi Tercih Etmelisiniz?</div>
-        <div class="neden-list">
-          <div class="neden-item">Güvenilir, tecrübeli ve profesyonel ekip</div>
-          <div class="neden-item">
-            Aynı gün hızlı servis ve net fiyatlandırma
-          </div>
-          <div class="neden-item">
-            Orijinal yedek parça, uzun vadeli çözüm garantisi
-          </div>
-        </div>
+        <!-- Neden Bizi Tercih Etmelisiniz? -->
+        <h2
+          style="
+            color: #2563eb;
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-top: 2.5em;
+          "
+        >
+          Neden Bizi Tercih Etmelisiniz?
+        </h2>
+        <ul style="list-style: none; padding: 0; margin: 18px 0 30px 0">
+          <li
+            style="
+              margin-bottom: 9px;
+              font-size: 1em;
+              display: flex;
+              align-items: center;
+            "
+          >
+            <span style="font-size: 1.2em; margin-right: 7px">✅</span>
+            Güvenilir ve tecrübeli ekip
+          </li>
+          <li
+            style="
+              margin-bottom: 9px;
+              font-size: 1em;
+              display: flex;
+              align-items: center;
+            "
+          >
+            <span style="font-size: 1.2em; margin-right: 7px">✅</span> Aynı gün
+            hızlı servis
+          </li>
+          <li
+            style="
+              margin-bottom: 9px;
+              font-size: 1em;
+              display: flex;
+              align-items: center;
+            "
+          >
+            <span style="font-size: 1.2em; margin-right: 7px">✅</span> Net ve
+            şeffaf fiyatlandırma
+          </li>
+          <li
+            style="
+              margin-bottom: 9px;
+              font-size: 1em;
+              display: flex;
+              align-items: center;
+            "
+          >
+            <span style="font-size: 1.2em; margin-right: 7px">✅</span> Orijinal
+            yedek parça kullanımı
+          </li>
+          <li
+            style="
+              margin-bottom: 0;
+              font-size: 1em;
+              display: flex;
+              align-items: center;
+            "
+          >
+            <span style="font-size: 1.2em; margin-right: 7px">✅</span> Müşteri
+            memnuniyeti odaklı yaklaşım
+          </li>
+        </ul>
       </div>
       <!-- Popüler Hizmetlerimiz -->
       <div class="section-title">Popüler Hizmetlerimiz</div>
       <div class="populer-hizmetler">
-        <a class="populer-box" href="hizmet.html?service=Buzdolabı%20Servisi"
-          >Buzdolabı Servisi</a
+        <a class="populer-btn" href="hizmet.html?service=Buzdolabı%20Servisi"
+          >❄️ Buzdolabı Servisi</a
         >
-        <a class="populer-box" href="hizmet.html?service=Çamaşır%20Makinesi"
-          >Çamaşır Makinesi</a
+        <a class="populer-btn" href="hizmet.html?service=Çamaşır%20Makinesi"
+          >🧺 Çamaşır Makinesi</a
         >
-        <a class="populer-box" href="hizmet.html?service=Klima"
-          >Klima Bakım & Onarım</a
+        <a class="populer-btn" href="hizmet.html?service=Klima"
+          >🌬️ Klima Bakım & Onarım</a
         >
       </div>
       <!-- Müşteri Yorumları -->
