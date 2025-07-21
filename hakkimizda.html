@@ -4,19 +4,17 @@
     <meta charset="UTF-8" />
     <title>Hakkımızda | Teknik Servis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Teknik Servis hakkında detaylar: Deneyimimiz, misyonumuz ve müşteri odaklı yaklaşımımız."
-    />
-    <!-- Favicon & Apple Touch Icon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="favicon.png" />
     <style>
       body {
-        background: #f7faff;
-        font-family: "Segoe UI", Arial, sans-serif;
         margin: 0;
-        color: #222;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(160deg, #1e293b 0%, #235081 100%);
+        min-height: 100vh;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       }
       .navbar-simple {
         background: #2563eb;
@@ -57,10 +55,6 @@
       .nav-link:hover {
         color: #fff;
       }
-      .nav-link.active {
-        color: #ffe44b;
-        text-decoration: underline;
-      }
       .nav-toggle {
         display: none;
         background: none;
@@ -98,40 +92,52 @@
           display: block;
         }
       }
-      main {
-        max-width: 750px;
-        margin: 0 auto;
-        padding: 32px 12px 0 12px;
+      .container {
+        max-width: 540px;
+        margin: 44px auto 32px auto;
+        padding: 0 10px;
+        flex: 1 1 auto;
       }
-      h1 {
-        color: #2563eb;
+      .title {
         text-align: center;
-        font-size: 2em;
-        margin-bottom: 1.1em;
+        font-size: 2.6em;
+        font-weight: 700;
+        margin-bottom: 38px;
+        letter-spacing: 1px;
       }
-      .about-box {
+      .info-box {
+        background: rgba(255, 255, 255, 0.13);
+        border-radius: 8px;
+        padding: 20px 15px 14px 18px;
+        font-size: 1.14em;
+        box-shadow: 0 2px 10px #12355928;
+        color: #e6e9ef;
+        margin-bottom: 22px;
+      }
+      .info-box b {
+        color: #fff;
+      }
+      .phone-box {
+        width: 100%;
+        text-align: center;
         background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 2px 12px #2563eb14;
-        padding: 2em 1.2em 2em 1.2em;
-        margin-bottom: 40px;
-      }
-      .about-box h2 {
-        color: #2563eb;
-        font-size: 1.16em;
-        margin: 1.3em 0 0.65em 0;
-      }
-      .about-box p {
-        margin-bottom: 1.1em;
-        font-size: 1.07em;
+        color: #222;
+        font-size: 1.13em;
+        font-family: monospace, Arial;
+        border-radius: 6px;
+        padding: 10px 0 8px 0;
+        margin-top: 18px;
+        letter-spacing: 1px;
+        font-weight: 500;
+        box-shadow: 0 1px 8px #12355916;
       }
       footer {
         background: #1e293b;
         color: #fff;
-        padding: 22px 0 14px 0;
+        padding: 22px 0 16px 0;
         text-align: center;
         font-size: 1em;
-        margin-top: 30px;
+        margin-top: auto;
       }
       footer a {
         color: #dbeafe;
@@ -144,61 +150,58 @@
         color: #ffe44b;
         margin-top: 7px;
       }
+      @media (max-width: 600px) {
+        .container {
+          margin: 18px auto 16px auto;
+          padding: 0 5px;
+        }
+        .title {
+          font-size: 2em;
+          margin-bottom: 20px;
+        }
+        .info-box {
+          padding: 13px 6px 7px 7px;
+          font-size: 1em;
+        }
+        .phone-box {
+          font-size: 1em;
+          padding: 8px 0 7px 0;
+        }
+      }
     </style>
   </head>
   <body>
-    <header>
-      <nav class="navbar-simple">
-        <div class="navbar-inner">
-          <a href="index.html" class="nav-logo">Ana Sayfa</a>
-          <button class="nav-toggle" aria-label="Menüyü Aç/Kapat">
-            &#9776;
-          </button>
-          <div class="nav-links">
-            <a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a>
-            <a class="nav-link active" href="hakkimizda.html">Hakkımızda</a>
-            <a class="nav-link" href="iletisim.html">İletişim</a>
-          </div>
+    <nav class="navbar-simple">
+      <div class="navbar-inner">
+        <a href="index.html" class="nav-logo">Ana Sayfa</a>
+        <button class="nav-toggle" aria-label="Menüyü Aç/Kapat">&#9776;</button>
+        <div class="nav-links">
+          <a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a>
+          <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+          <a class="nav-link" href="iletisim.html">İletişim</a>
         </div>
-      </nav>
-    </header>
-    <main>
-      <h1>Hakkımızda</h1>
-      <div class="about-box">
-        <h2>Teknik Servis Kimdir?</h2>
-        <p>
-          Teknik Servis; beyaz eşya, klima ve ev elektroniği konusunda
-          uzmanlaşmış, hızlı ve güvenilir hizmet sunmayı amaçlayan bir teknik
-          servis platformudur. Yılların getirdiği deneyimle, müşteri
-          memnuniyetini her şeyin üzerinde tutarak, tamir ve bakım hizmetlerinde
-          çözüm odaklı yaklaşımımızı sürdürüyoruz.
-        </p>
-        <h2>Misyonumuz</h2>
-        <p>
-          Amacımız, garantisi sona ermiş cihazlarınızda da uygun fiyatlı, hızlı
-          ve kaliteli servis sağlayarak, yaşamınızı kolaylaştırmak ve evinizdeki
-          cihazların kesintisiz çalışmasını sağlamak.
-        </p>
-        <h2>Neden Bizi Tercih Etmelisiniz?</h2>
-        <ul>
-          <li>Hızlı ve zamanında müdahale</li>
-          <li>Alanında uzman ekip</li>
-          <li>Şeffaf fiyatlandırma</li>
-          <li>Müşteri memnuniyeti odaklı yaklaşım</li>
-          <li>7/24 teknik destek hattı</li>
-        </ul>
-        <h2>Bize Ulaşın</h2>
-        <p>
-          Her türlü soru ve öneriniz için
-          <a
-            href="iletisim.html"
-            style="color: #2563eb; text-decoration: underline"
-            >iletişim</a
-          >
-          sayfamızdan bize kolayca ulaşabilirsiniz.
-        </p>
       </div>
-    </main>
+    </nav>
+    <div class="container">
+      <div class="title">Hakkımızda</div>
+      <div class="info-box">
+        <b>Firma adı:</b> Acil Hizmet Al Ltd. Şti.<br />
+        <b>Firma adresi:</b> Barış Mah. Mevlana Cad. No:78 Daire:4
+        Muratpaşa/Antalya<br />
+        <b>Hakkımızda:</b> Teknik sorunlarınızı çözmek için her zaman
+        yanınızdayız. 7 gün 24 saat boyunca kesintisiz hizmet sunan profesyonel
+        ekibimizle, sorunlarınızı anında çözmek için çalışıyoruz.
+        Karşılaştığınız tüm aksaklıkları bize bildirerek, hızlı ve güvenilir
+        teknik destek alabilirsiniz. Günün her saati ulaşabileceğiniz hizmetimiz
+        sayesinde, teknik sorunlarınızı dert etmeyin. Bize hemen ulaşarak rahat
+        bir nefes alabilirsiniz.
+      </div>
+      <div class="phone-box">
+        <a href="tel: 05555555555" style="text-decoration: none; color: inherit"
+          >0 (555) 555 55 55</a
+        >
+      </div>
+    </div>
     <footer>
       <div>
         <a href="index.html">Ana Sayfa</a> |

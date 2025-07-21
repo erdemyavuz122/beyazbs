@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <title>İletişim | Teknik Servis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="favicon.png" />
     <style>
       body {
         margin: 0;
-        background: #f7faff;
         font-family: "Segoe UI", Arial, sans-serif;
-      }
-      header {
-        background: #2563eb;
-        padding: 1em 0 0.9em 0;
+        background: linear-gradient(160deg, #1e293b 0%, #235081 100%);
+        min-height: 100vh;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       }
       .navbar-simple {
         background: #2563eb;
@@ -92,143 +92,52 @@
           display: block;
         }
       }
-      main {
-        max-width: 440px;
-        margin: 0 auto;
-        padding: 28px 12px 0 12px;
+      .container {
+        max-width: 520px;
+        margin: 44px auto 32px auto;
+        padding: 0 10px;
+        flex: 1 1 auto;
       }
       .title {
-        color: #2563eb;
-        font-size: 1.32em;
-        font-weight: 700;
         text-align: center;
-        margin-bottom: 1em;
+        font-size: 2.6em;
+        font-weight: 700;
+        margin-bottom: 38px;
+        letter-spacing: 1px;
       }
-      .contact-box {
+      .info-box {
+        background: rgba(255, 255, 255, 0.13);
+        border-radius: 8px;
+        padding: 22px 18px 14px 18px;
+        font-size: 1.16em;
+        box-shadow: 0 2px 10px #12355925;
+        color: #e6e9ef;
+        margin-bottom: 25px;
+      }
+      .info-box b {
+        color: #fff;
+      }
+      .phone-box {
+        width: 100%;
+        text-align: center;
         background: #fff;
-        border-radius: 11px;
-        box-shadow: 0 2px 14px #2563eb10;
-        padding: 2em 1em 1.2em 1em;
-      }
-      .contact-row {
-        margin-bottom: 1.15em;
-      }
-      .contact-label {
-        color: #1744a0;
-        font-weight: 500;
-      }
-      .ara-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 9px;
-        background: #2563eb;
-        color: #fff;
-        font-weight: 700;
-        border-radius: 28px;
-        font-size: 1.08em;
-        padding: 11px 28px 11px 16px;
-        box-shadow: 0 3px 18px #2563eb18;
-        margin: 30px auto 22px auto;
-        width: fit-content;
-        min-width: 145px;
-        max-width: 90vw;
-        text-align: center;
-        text-decoration: none;
-        transition: background 0.17s, transform 0.11s, box-shadow 0.16s;
-        cursor: pointer;
-        letter-spacing: 0.02em;
-        border: none;
-        outline: none;
-      }
-      .ara-btn:hover,
-      .ara-btn:focus {
-        background: #1744a0;
-        color: #ffe44b;
-        transform: scale(1.04);
-        box-shadow: 0 6px 28px #2563eb31;
-        text-decoration: none;
-      }
-      .ara-btn:active {
-        background: #133179;
-        color: #fffbe7;
-      }
-      /* Form Stilleri */
-      form {
+        color: #222;
+        font-size: 1.13em;
+        font-family: monospace, Arial;
+        border-radius: 6px;
+        padding: 10px 0 8px 0;
         margin-top: 18px;
-      }
-      .form-row {
-        margin-bottom: 13px;
-      }
-      label {
-        display: block;
-        margin-bottom: 5px;
+        letter-spacing: 1px;
         font-weight: 500;
-        color: #1744a0;
-      }
-      input,
-      textarea {
-        width: 100%;
-        padding: 10px 9px;
-        border-radius: 7px;
-        border: 1px solid #bccbe7;
-        background: #f4f8ff;
-        font-size: 1em;
-        font-family: inherit;
-        box-sizing: border-box;
-        margin-bottom: 2px;
-      }
-      input:focus,
-      textarea:focus {
-        outline: 2px solid #2563eb33;
-        border-color: #2563eb;
-      }
-      textarea {
-        min-height: 80px;
-        resize: vertical;
-      }
-      .form-btn {
-        background: #2563eb;
-        color: #fff;
-        font-weight: 600;
-        border-radius: 11px;
-        font-size: 1.09em;
-        padding: 12px 0;
-        width: 100%;
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 2px 9px #2563eb15;
-        transition: background 0.13s;
-      }
-      .form-btn:hover {
-        background: #1744a0;
-      }
-      .form-success {
-        margin-top: 12px;
-        color: #30b662;
-        background: #e8ffe8;
-        padding: 10px 8px;
-        border-radius: 9px;
-        font-size: 0.98em;
-        text-align: center;
-        font-weight: 500;
-      }
-      .form-error {
-        margin-top: 10px;
-        color: #e54343;
-        background: #fff0f0;
-        padding: 8px 8px;
-        border-radius: 7px;
-        font-size: 0.98em;
-        text-align: center;
+        box-shadow: 0 1px 8px #12355916;
       }
       footer {
         background: #1e293b;
         color: #fff;
-        padding: 22px 0 14px 0;
+        padding: 22px 0 16px 0;
         text-align: center;
         font-size: 1em;
-        margin-top: 32px;
+        margin-top: auto;
       }
       footer a {
         color: #dbeafe;
@@ -242,79 +151,46 @@
         margin-top: 7px;
       }
       @media (max-width: 600px) {
-        main {
-          padding: 18px 3px 0 3px;
+        .container {
+          margin: 18px auto 16px auto;
+          padding: 0 5px;
         }
-        .contact-box {
-          padding: 1em 5px;
+        .title {
+          font-size: 2em;
+          margin-bottom: 20px;
+        }
+        .info-box {
+          padding: 13px 6px 7px 7px;
+          font-size: 1em;
         }
       }
     </style>
-    <script src="config.js"></script>
   </head>
   <body>
-    <header>
-      <nav class="navbar-simple">
-        <div class="navbar-inner">
-          <a href="index.html" class="nav-logo">Teknik Servis</a>
-          <button class="nav-toggle" aria-label="Menüyü Aç/Kapat">
-            &#9776;
-          </button>
-          <div class="nav-links">
-            <a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a>
-            <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
-            <a class="nav-link" href="iletisim.html">İletişim</a>
-          </div>
+    <nav class="navbar-simple">
+      <div class="navbar-inner">
+        <a href="index.html" class="nav-logo">Ana Sayfa</a>
+        <button class="nav-toggle" aria-label="Menüyü Aç/Kapat">&#9776;</button>
+        <div class="nav-links">
+          <a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a>
+          <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+          <a class="nav-link" href="iletisim.html">İletişim</a>
         </div>
-      </nav>
-    </header>
-
-    <main>
-      <div class="title">İletişim Bilgileri</div>
-      <div class="contact-box">
-        <div class="contact-row">
-          <span class="contact-label">Telefon:</span>
-          <span id="contactPhone">0555 555 5555</span>
-        </div>
-        <div class="contact-row">
-          <span class="contact-label">E-posta:</span>
-          <span id="contactEmail">teknikservis@ornekmail.com</span>
-        </div>
-        <div class="contact-row">
-          <span class="contact-label">Adres:</span>
-          <span id="contactAddress">Mahalle Cad. No: 5, İstanbul</span>
-        </div>
-        <a id="callBtn" href="#" class="ara-btn">📞 Hemen Ara</a>
-        <!-- İletişim Formu -->
-        <form id="contactForm" autocomplete="off">
-          <div class="form-row">
-            <label for="name">Adınız Soyadınız</label>
-            <input type="text" id="name" name="name" required maxlength="60" />
-          </div>
-          <div class="form-row">
-            <label for="email">E-posta</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              maxlength="60"
-            />
-          </div>
-          <div class="form-row">
-            <label for="message">Mesajınız</label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              maxlength="600"
-            ></textarea>
-          </div>
-          <button type="submit" class="form-btn">Gönder</button>
-          <div id="formMsg"></div>
-        </form>
       </div>
-    </main>
+    </nav>
+    <div class="container">
+      <div class="title">İletişim</div>
+      <div class="info-box">
+        <b>Firma adı:</b> Teknik Servis<br />
+        <b>Firma adresi:</b> Kadıköy, İstanbul, Türkiye<br />
+      </div>
+      <div class="phone-box">
+        <a href="tel: 05555555555" style="text-decoration: none; color: inherit"
+          >0 (555) 555 55 55</a
+        >
+      </div>
+    </div>
+
     <footer>
       <div>
         <a href="index.html">Ana Sayfa</a> |
@@ -331,43 +207,9 @@
       <div style="margin-top: 5px; font-size: 0.96em">Teknik Servis © 2024</div>
     </footer>
     <script>
-      // Hamburger menü aç/kapat
       document.querySelector(".nav-toggle").onclick = function () {
         document.querySelector(".nav-links").classList.toggle("show");
       };
-      // config.js'den şirket bilgilerini çek ve yerleştir
-      document.addEventListener("DOMContentLoaded", function () {
-        var cfg = window.SITE_CONFIG;
-        if (cfg && cfg.phone) {
-          document.getElementById("contactPhone").innerText = cfg.phone;
-          document.getElementById("callBtn").href =
-            "tel:" + cfg.phone.replace(/\D/g, "");
-        }
-        if (cfg && cfg.email) {
-          document.getElementById("contactEmail").innerText = cfg.email;
-        }
-        if (cfg && cfg.address) {
-          document.getElementById("contactAddress").innerText = cfg.address;
-        }
-      });
-      // Form işleyici
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          var name = document.getElementById("name").value.trim();
-          var email = document.getElementById("email").value.trim();
-          var msg = document.getElementById("message").value.trim();
-          var formMsg = document.getElementById("formMsg");
-          if (!name || !email || !msg) {
-            formMsg.innerHTML =
-              '<div class="form-error">Tüm alanları doldurun.</div>';
-            return;
-          }
-          formMsg.innerHTML =
-            '<div class="form-success">Mesajınız başarıyla gönderildi! En kısa sürede dönüş yapılacaktır.</div>';
-          document.getElementById("contactForm").reset();
-        });
     </script>
   </body>
 </html>
