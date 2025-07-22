@@ -4,26 +4,34 @@
     <meta charset="UTF-8" />
     <title>Hizmetlerimiz | Teknik Servis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
-    <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <style>
+      :root {
+        --main-blue: #436fc2;
+        --dark-blue: #243c5a;
+        --white: #fff;
+        --text-dark: #182640;
+        --button-blue: #2563eb;
+        --button-hover: #1744a0;
+        --comment-bg: #e0e7ef;
+      }
       body {
         margin: 0;
-        background: #f7faff;
+        background: var(--main-blue);
         font-family: "Segoe UI", Arial, sans-serif;
-        color: #222;
+        color: var(--white);
+        min-height: 100vh;
       }
+      /* Navbar */
       header {
-        background: #2563eb;
-        padding: 1.05em 0 1em 0;
+        background: var(--dark-blue);
       }
       .navbar-simple {
-        background: #2563eb;
         position: sticky;
         top: 0;
-        z-index: 20;
+        z-index: 99;
+        background: var(--dark-blue);
       }
       .navbar-inner {
         max-width: 1000px;
@@ -32,28 +40,32 @@
         align-items: center;
         justify-content: space-between;
         height: 54px;
-        padding: 0 14px;
+        padding: 0 16px;
       }
       .nav-logo {
         font-weight: 800;
-        font-size: 1.15em;
-        color: #fff;
+        font-size: 1.18em;
+        color: var(--white);
         display: flex;
         align-items: center;
-        gap: 7px;
         text-decoration: none;
+        letter-spacing: 0.01em;
       }
       .nav-links {
         display: flex;
-        gap: 18px;
+        gap: 17px;
+        align-items: center;
+        position: relative;
       }
       .nav-link {
-        color: #dbeafe;
+        color: #e3e8ff;
         text-decoration: none;
         font-weight: 700;
         font-size: 1em;
         transition: color 0.14s;
         padding: 2px 0;
+        position: relative;
+        cursor: pointer;
       }
       .nav-link:hover {
         color: #fff;
@@ -65,8 +77,43 @@
         color: #fff;
         font-size: 2em;
         margin-left: 8px;
+        cursor: pointer;
       }
-      @media (max-width: 620px) {
+      /* Dropdown */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 110%;
+        left: 0;
+        min-width: 170px;
+        background: var(--dark-blue);
+        box-shadow: 0 6px 20px #0001;
+        border-radius: 10px;
+        z-index: 50;
+      }
+      .dropdown-content a {
+        color: #e3e8ff;
+        padding: 11px 17px;
+        display: block;
+        text-decoration: none;
+        font-size: 1em;
+        transition: background 0.13s, color 0.13s;
+        border-radius: 7px;
+      }
+      .dropdown-content a:hover {
+        background: var(--button-blue);
+        color: #fff;
+      }
+      .dropdown:hover .dropdown-content,
+      .dropdown:focus-within .dropdown-content {
+        display: block;
+      }
+      /* Hamburger */
+      @media (max-width: 700px) {
         .navbar-inner {
           flex-direction: row;
           height: auto;
@@ -75,92 +122,105 @@
           display: none;
           flex-direction: column;
           gap: 0;
-          background: #2563eb;
+          background: var(--dark-blue);
           width: 100vw;
           position: absolute;
           left: 0;
           right: 0;
           top: 54px;
-          z-index: 99;
         }
         .nav-links.show {
           display: flex;
         }
-        .nav-link {
-          padding: 12px 22px;
-          font-size: 1.08em;
-          border-bottom: 1px solid #2563eb22;
+        .nav-link,
+        .dropdown-content a {
+          padding: 16px 20px;
+          border-bottom: 1px solid #3a4a65;
+          font-size: 1.09em;
+        }
+        .dropdown-content {
+          position: static;
+          box-shadow: none;
+          border-radius: 0;
         }
         .nav-toggle {
           display: block;
         }
       }
-
+      /* Main Content */
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 34px 12px 0 12px;
+      }
       h1.section-title {
-        color: #2563eb;
-        font-size: 1.55em;
+        color: #fff;
+        font-size: 2em;
         text-align: center;
-        font-weight: 700;
-        margin-top: 2em;
-        margin-bottom: 0.6em;
+        font-weight: 800;
+        margin-top: 1.2em;
+        margin-bottom: 0.7em;
+        letter-spacing: 0.01em;
       }
       .desc {
         text-align: center;
-        font-size: 1.06em;
-        margin-bottom: 1.8em;
+        font-size: 1.12em;
+        margin-bottom: 2em;
+        color: #dbeafe;
       }
       .hizmetler {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
-        max-width: 640px;
-        margin: 0 auto 28px auto;
+        gap: 16px;
+        max-width: 800px;
+        margin: 0 auto 35px auto;
       }
       .hizmet-kutu {
-        background: #fff;
-        border-radius: 11px;
-        box-shadow: 0 2px 10px #2563eb0b;
-        padding: 14px 5px 10px 5px;
+        background: var(--white);
+        border-radius: 13px;
+        box-shadow: 0 2px 14px #1c295b22;
+        padding: 18px 7px 11px 7px;
         text-align: center;
-        font-weight: 600;
-        color: #1744a0;
-        font-size: 0.96em;
-        width: 145px;
-        min-height: 70px;
+        font-weight: 700;
+        color: var(--main-blue);
+        font-size: 1.08em;
+        width: 155px;
+        min-height: 74px;
         text-decoration: none;
-        border: 1.3px solid #e6eaff;
-        transition: box-shadow 0.13s, transform 0.13s, background 0.14s;
+        border: 1.5px solid #e6eaff;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         letter-spacing: 0.01em;
+        transition: box-shadow 0.13s, transform 0.13s, background 0.15s,
+          color 0.12s;
       }
       .hizmet-kutu .emoji {
-        font-size: 1.35em;
+        font-size: 1.48em;
         margin-bottom: 4px;
       }
       .hizmet-kutu:hover {
-        box-shadow: 0 6px 24px #2563eb22;
-        background: #f4f7fe;
-        color: #2563eb;
+        box-shadow: 0 6px 24px #1530603d;
+        background: #eef4ff;
+        color: var(--button-blue);
         transform: scale(1.04);
       }
       @media (max-width: 700px) {
         .hizmetler {
-          gap: 7px;
+          gap: 8px;
         }
         .hizmet-kutu {
-          width: 45vw;
+          width: 47vw;
           min-width: 110px;
-          font-size: 0.92em;
-          padding: 9px 2px 7px 2px;
-          min-height: 58px;
+          font-size: 0.97em;
+          padding: 12px 2px 9px 2px;
+          min-height: 61px;
         }
         h1.section-title {
-          font-size: 1.08em;
-          margin-top: 1.3em;
+          font-size: 1.12em;
+          margin-top: 0.9em;
         }
       }
       /* ---- Hemen Ara Butonu ---- */
@@ -169,30 +229,29 @@
         align-items: center;
         justify-content: center;
         gap: 9px;
-        background: #2563eb;
+        background: var(--button-blue);
         color: #fff;
         font-weight: 700;
         border-radius: 28px;
         font-size: 1.1em;
-        padding: 11px 34px 11px 19px;
+        padding: 11px 36px 11px 19px;
         box-shadow: 0 3px 18px #2563eb18;
         margin: 32px auto 10px auto;
         width: fit-content;
-        min-width: 158px;
+        min-width: 160px;
         max-width: 88vw;
         text-align: center;
         text-decoration: none;
         transition: background 0.17s, transform 0.11s, box-shadow 0.16s;
         cursor: pointer;
         letter-spacing: 0.02em;
-        position: relative;
         border: none;
         outline: none;
       }
       .ara-btn:hover,
       .ara-btn:focus {
-        background: #1744a0;
-        color: #ffe44b;
+        background: var(--button-hover);
+        color: #fff;
         transform: scale(1.04);
         box-shadow: 0 6px 28px #2563eb31;
         text-decoration: none;
@@ -201,35 +260,36 @@
         background: #133179;
         color: #fffbe7;
       }
-      /* -------------------------------- */
+      /* Yorumlar */
       .yorumlar-section {
         max-width: 600px;
-        margin: 36px auto 0 auto;
+        margin: 40px auto 0 auto;
         padding: 0 8px;
       }
       .yorumlar-title {
-        color: #2563eb;
-        font-size: 1.12em;
+        color: #dbeafe;
+        font-size: 1.19em;
         margin-bottom: 0.9em;
-        font-weight: 600;
+        font-weight: 700;
       }
       .yorum {
-        background: #e0e7ef;
+        background: var(--comment-bg);
         margin-bottom: 10px;
         padding: 10px 14px 8px 14px;
         border-radius: 9px;
-        font-size: 0.98em;
-        line-height: 1.55;
-        color: #222;
-        box-shadow: 0 1px 5px #2563eb09;
+        font-size: 1.01em;
+        line-height: 1.58;
+        color: var(--main-blue);
+        box-shadow: 0 1px 5px #10214c09;
       }
+      /* Footer */
       footer {
-        background: #1e293b;
+        background: var(--dark-blue);
         color: #fff;
-        padding: 23px 0 14px 0;
+        padding: 24px 0 14px 0;
         text-align: center;
         font-size: 1em;
-        margin-top: 26px;
+        margin-top: 35px;
       }
       footer a {
         color: #dbeafe;
@@ -241,7 +301,7 @@
         color: #ffe44b;
       }
       .footer-mini {
-        font-size: 0.93em;
+        font-size: 0.95em;
         color: #ffe44b;
         margin-top: 7px;
       }
@@ -249,6 +309,7 @@
     <script src="config.js"></script>
   </head>
   <body>
+    <!-- Navbar -->
     <header>
       <nav class="navbar-simple">
         <div class="navbar-inner">
@@ -257,7 +318,21 @@
             &#9776;
           </button>
           <div class="nav-links">
-            <a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a>
+            <div class="dropdown">
+              <a class="nav-link" href="hizmetlerimiz.html" tabindex="0">
+                Hizmetlerimiz ▼
+              </a>
+              <div class="dropdown-content">
+                <a href="hizmetlerimiz.html">Tüm Hizmetler</a>
+                <a href="hizmet.html?service=Buzdolabı%20Servisi"
+                  >Buzdolabı Servisi</a
+                >
+                <a href="hizmet.html?service=Çamaşır%20Makinesi"
+                  >Çamaşır Makinesi</a
+                >
+                <a href="hizmet.html?service=Klima">Klima</a>
+              </div>
+            </div>
             <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
             <a class="nav-link" href="iletisim.html">İletişim</a>
           </div>
@@ -270,6 +345,9 @@
       <div class="desc">
         Tüm hizmetlerimize aşağıdan ulaşabilir ve detay sayfalarımıza
         gidebilirsiniz.
+      </div>
+      <div style="display: flex; justify-content: center">
+        <a id="callBtn" href="tel: 05555555555" class="ara-btn">📞 Hemen Ara</a>
       </div>
       <div class="hizmetler">
         <a
@@ -309,9 +387,7 @@
         </a>
       </div>
       <!-- Hemen Ara Butonu -->
-      <div style="display: flex; justify-content: center">
-        <a id="callBtn" href="tel: 05555555555" class="ara-btn">📞 Hemen Ara</a>
-      </div>
+
       <section class="yorumlar-section">
         <div class="yorumlar-title">Müşteri Yorumları</div>
         <div class="yorum">
@@ -366,10 +442,20 @@
     </footer>
     <script src="config.js"></script>
     <script>
-      // Menü aç/kapat
+      // Hamburger menü aç/kapat
       document.querySelector(".nav-toggle").onclick = function () {
         document.querySelector(".nav-links").classList.toggle("show");
       };
+      // Telefon butonu config.js'den
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.SITE_CONFIG) {
+          var cfg = window.SITE_CONFIG;
+          document.getElementById("callBtn").href =
+            "tel:" + cfg.phone.replace(/\D/g, "");
+          document.getElementById("callBtn").innerHTML =
+            "📞 " + cfg.phone + " &nbsp;|&nbsp; Hemen Ara";
+        }
+      });
     </script>
   </body>
 </html>
