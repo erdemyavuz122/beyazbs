@@ -43,6 +43,8 @@
       .nav-links {
         display: flex;
         gap: 18px;
+        align-items: center;
+        position: relative;
       }
       .nav-link {
         color: #dbeafe;
@@ -51,8 +53,10 @@
         font-size: 1em;
         transition: color 0.14s;
         padding: 2px 0;
+        cursor: pointer;
       }
-      .nav-link:hover {
+      .nav-link:hover,
+      .dropdown-item:hover {
         color: #fff;
       }
       .nav-toggle {
@@ -63,11 +67,43 @@
         font-size: 2em;
         margin-left: 8px;
       }
+      .dropdown {
+        position: relative;
+      }
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 120%;
+        min-width: 170px;
+        background: #2563eb;
+        border-radius: 7px;
+        box-shadow: 0 6px 24px #2563eb22;
+        padding: 7px 0;
+        z-index: 100;
+        flex-direction: column;
+      }
+      .dropdown-item {
+        display: block;
+        color: #dbeafe;
+        padding: 10px 22px;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: 500;
+        transition: background 0.12s, color 0.12s;
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
+      .dropdown-item:hover {
+        background: #1744a0;
+        color: #fff;
+      }
+      .dropdown:hover .dropdown-menu,
+      .dropdown:focus-within .dropdown-menu {
+        display: flex;
+      }
       @media (max-width: 620px) {
-        .navbar-inner {
-          flex-direction: row;
-          height: auto;
-        }
         .nav-links {
           display: none;
           flex-direction: column;
@@ -90,6 +126,17 @@
         }
         .nav-toggle {
           display: block;
+        }
+        .dropdown-menu {
+          position: static;
+          min-width: unset;
+          border-radius: 0;
+          box-shadow: none;
+          padding: 0;
+          background: #2563eb;
+        }
+        .dropdown-item {
+          padding: 12px 35px;
         }
       }
       .container {
@@ -171,17 +218,48 @@
     </style>
   </head>
   <body>
-    <nav class="navbar-simple">
-      <div class="navbar-inner">
-        <a href="index.html" class="nav-logo">Ana Sayfa</a>
-        <button class="nav-toggle" aria-label="Menüyü Aç/Kapat">&#9776;</button>
-        <div class="nav-links">
-          <a class="nav-link" href="hizmetlerimiz.html">Hizmetlerimiz</a>
-          <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
-          <a class="nav-link" href="iletisim.html">İletişim</a>
+    <header>
+      <nav class="navbar-simple">
+        <div class="navbar-inner">
+          <a href="index.html" class="nav-logo">Teknik Servis</a>
+          <button class="nav-toggle" aria-label="Menüyü Aç/Kapat">
+            &#9776;
+          </button>
+          <div class="nav-links">
+            <div class="dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="hizmetlerimiz.html"
+                id="hizmetlerimizMenu"
+                tabindex="0"
+              >
+                Hizmetlerimiz
+                <span style="font-size: 1.2em; vertical-align: middle">▼</span>
+              </a>
+              <div class="dropdown-menu" id="dropdownMenu">
+                <a
+                  href="hizmet.html?service=Buzdolabı%20Servisi"
+                  class="dropdown-item"
+                  >Buzdolabı Servisi</a
+                >
+                <a
+                  href="hizmet.html?service=Çamaşır%20Makinesi"
+                  class="dropdown-item"
+                  >Çamaşır Makinesi</a
+                >
+                <a href="hizmet.html?service=Klima" class="dropdown-item"
+                  >Klima</a
+                >
+                <!-- Diğer hizmetler eklenebilir -->
+              </div>
+            </div>
+            <a class="nav-link" href="hakkimizda.html">Hakkımızda</a>
+            <a class="nav-link" href="iletisim.html">İletişim</a>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
+
     <div class="container">
       <div class="title">Hakkımızda</div>
       <div class="info-box">
